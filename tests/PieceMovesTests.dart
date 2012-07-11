@@ -3,10 +3,7 @@
 //#import('package:unittest/unittest.dart');
 #import('../packages/unittest/unittest.dart');
 
-
-class PieceMovesTests {
-  
-}
+final DEBUG=1;
 
 printBoardCellLocations() {
   StringBuffer sb = new StringBuffer();
@@ -21,6 +18,8 @@ printBoardCellLocations() {
 }
 
 printBoard(Engine e) {
+  if (DEBUG!=1) return;
+  
   printBoardCellLocations();
   print("HumanPlayer = ${e.HumanPlayer}");
   print("WhoseMove = ${e.WhoseMove}");
@@ -35,7 +34,7 @@ printBoard(Engine e) {
       var t = pieceType.toString().splitChars()[0];
       
       if (t == "N") {
-        sb.add("[   ] ");
+        sb.add("[$c  ] ");
       } else {
         sb.add("[$c $t] ");
       }
@@ -43,18 +42,12 @@ printBoard(Engine e) {
     sb.add("\n");
   }
   
-  print(sb.toString());
-  
-  
-  
-  
+  print(sb.toString()); 
 }
 
 
 void main() {
-  
-  
-  
+  /*
   group('PieceMoves', () {
     test('InitiateChessPieceMotion', (){
       var BishopTotalMoves1Data = [7, 6, 5, 4, 3, 2, 1, 0, 6, 6, 5, 4, 3, 2, 1, 0, 5, 5, 5, 4, 3, 2, 1, 0, 4, 4, 4, 4, 3, 2, 1, 0, 3, 3, 3, 3, 3, 2, 1, 0, 2, 2, 2, 2, 2, 2, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -103,9 +96,9 @@ void main() {
     });
     
   });
+  */
   
-  
-  
+  /*
   group('Board', () {
     
     test('Creating a board', () {
@@ -114,10 +107,10 @@ void main() {
     });
     
   });
+  */ 
   
-  
+  /*
   group('Engine', () {
-    
     test('Creating a Engine', () {
       print("Entering unit test");
       Engine e = new Engine();
@@ -167,7 +160,72 @@ void main() {
       moves.forEach((m)=>sb.add("moves = $m\n"));
       print(sb.toString());
     });
+    */
+    test('Test Game', () {
+      Engine e = new Engine();
+      Expect.isNotNull(e);
+      printBoard(e);
+      
+      checkState(player, 
+        src_col, src_row,
+        dst_col, dst_row,
+        src_piece_color, src_piece_type, 
+        pre_dst_piece_color, pre_dst_piece_type,
+        dst_piece_color, dst_piece_type) {
+        expect(e.WhoseMove.toString(), matches(player), "");
+        expect(e.GetPieceColorAt(src_col, src_row).toString(), matches(src_piece_color));
+        expect(e.GetPieceTypeAt(src_col, src_row).toString(), matches(src_piece_type));
+        expect(e.GetPieceColorAt(dst_col, dst_row).toString(), matches(pre_dst_piece_color));
+        expect(e.GetPieceTypeAt(dst_col, dst_row).toString(), matches(pre_dst_piece_type));
+        expect(e.IsValidMove(src_col, src_row, dst_col, dst_row), isTrue, "");
+        expect(e.MovePiece(src_col, src_row, dst_col, dst_row), isTrue, "");
+        expect(e.GetPieceColorAt(src_col, src_row).toString(), matches("White")); // Default color for an empty space is white
+        expect(e.GetPieceColorAt(dst_col, dst_row).toString(), matches(dst_piece_color));
+        expect(e.GetPieceTypeAt(dst_col, dst_row).toString(), matches(dst_piece_type));
+        printBoard(e);
+      };
+      
+      checkState("White", 
+        1, 6, 1, 5, 
+        "White", "Pawn", 
+        "White", "None", 
+        "White", "Pawn");
+      
+      checkState("Black", // Player
+        1, 1, 1, 3,       // src_col, src_row, dst_col, dst_row,
+        "Black", "Pawn",  // src_piece_color, src_piece_type, 
+        "White", "None",  // pre_dst_piece_color, pre_dst_piece_type,
+        "Black", "Pawn"); // dst_piece_color, dst_piece_type
+      
+      checkState("White",           // Player
+                 1, 7, 2, 5,        // src_col, src_row, dst_col, dst_row,
+                 "White", "Knight",   // src_piece_color, src_piece_type, 
+                 "White", "None",   // pre_dst_piece_color, pre_dst_piece_type,
+                 "White", "Knight");  // dst_piece_color, dst_piece_type
+      
+      checkState("Black",           // Player
+        7, 1, 7, 3,        // src_col, src_row, dst_col, dst_row,
+        "Black", "Pawn",   // src_piece_color, src_piece_type, 
+        "White", "None",   // pre_dst_piece_color, pre_dst_piece_type,
+        "Black", "Pawn");  // dst_piece_color, dst_piece_type
+         
+      checkState("White",           // Player
+                 2, 5, 1, 3,        // src_col, src_row, dst_col, dst_row,
+        "White", "Knight",   // src_piece_color, src_piece_type, 
+        "Black", "Pawn",   // pre_dst_piece_color, pre_dst_piece_type,
+        "White", "Knight");  // dst_piece_color, dst_piece_type
+            
+      checkState("Black",           // Player
+        0, 1, 0, 3,        // src_col, src_row, dst_col, dst_row,
+        "Black", "Pawn",   // src_piece_color, src_piece_type, 
+        "White", "None",   // pre_dst_piece_color, pre_dst_piece_type,
+        "Black", "Pawn");  // dst_piece_color, dst_piece_type      
+    });
     
-  });
-  
+    
+    test('Test Board',() {
+      printBoard(new Engine.fromString("rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1"));
+      printBoard(new Engine.fromString("rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2"));
+      printBoard(new Engine.fromString("rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2"));
+    });
 }

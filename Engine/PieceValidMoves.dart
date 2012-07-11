@@ -12,8 +12,8 @@ class PieceValidMoves {
   
   void _AnalyzeMovePawn(Board board, int dstPos, Piece pcMoving) {
     //Because Pawns only kill diagonaly we handle the En Passant scenario specialy
-    print("board = ${board}");
-    print("board.EnPassantPosition = ${board.EnPassantPosition}");
+    //print("board = ${board}");
+    //print("board.EnPassantPosition = ${board.EnPassantPosition}");
     if (board.EnPassantPosition > 0)
     {
         if (pcMoving.PieceColor != board.EnPassantColor)
@@ -108,7 +108,7 @@ class PieceValidMoves {
     //If there no piece there I can potentialy kill just add the move and exit
     if (board.Squares[dstPos].PlacedPiece == null)
     {
-      print("pcMoving.ValidMoves = ${pcMoving.ValidMoves}");
+      //print("pcMoving.ValidMoves = ${pcMoving.ValidMoves}");
         pcMoving.ValidMoves.add(dstPos);
 
         return true;
@@ -144,8 +144,8 @@ class PieceValidMoves {
         return false;
     }
     
-    print("pcAttacked.DefendedValue = ${pcAttacked.DefendedValue}");
-    print("pcMoving.PieceActionValue = ${pcMoving.PieceActionValue}");
+    //print("pcAttacked.DefendedValue = ${pcAttacked.DefendedValue}");
+    //print("pcMoving.PieceActionValue = ${pcMoving.PieceActionValue}");
     
     //Same Color I am defending
     pcAttacked.DefendedValue += pcMoving.PieceActionValue;
@@ -464,7 +464,7 @@ class PieceValidMoves {
         }
         else
         {
-            print("WhiteAttackBoard = ${WhiteAttackBoard}");
+            //print("WhiteAttackBoard = ${WhiteAttackBoard}");
             if (WhiteAttackBoard[dstPos])
             {
                 BlackAttackBoard[dstPos] = true;
