@@ -10,4 +10,6 @@ dependencies:
   json-object:
       git: git://github.com/chrisbu/dartwatch-JsonObject.git
   unittest:
-      sdk: unittest
+      git: git://github.com/financeCoding/unittest.git
+  log4dart:
+      git: git://github.com/Solvr/log4dart.git
