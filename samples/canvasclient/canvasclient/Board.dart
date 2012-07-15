@@ -1,32 +1,63 @@
 
+
 class Board {
-  int ratio;
   CanvasRenderingContext2D ctx;
+  int ratio;
+  int width;
+  int height; 
+  Map<String, BoardSquare> highlightsquares;
+  Map<String, BoardSquare> squares; 
+  Function piecemoves;
   
-  Board() {
-    CanvasElement canvas = query("#board");
-    ratio = (canvas.height / 400).toInt();
-    ctx = canvas.getContext("2d");
-  }
+  final _highlightColor = "rgba(207, 247, 0, 0.9)";
+  final _boxColor1 = "rgb(0, 127, 0)";
+  final _boxColor2 = "rgb(251, 246, 229)";
   
-  draw() {
+  Board(this.ctx, [this.height = 400, this.width = 400]) {
+    ratio = (height / width).toInt();
+    highlightsquares = {};
+    squares = {};
+    
     int i, j;
     var sz = 50 * ratio;
-    ctx.fillStyle = "rgb(0,127,0)";
+    
     for (i = 0; i < 8; i++) {
         for (j = 0; j < 8; j++) {
             if ((i + j) % 2 == 1) {
-                ctx.fillRect (i*sz, j*sz, sz, sz);
+              squares["$i $j"] = new BoardSquare(col: i, row: j, x: i*sz, y: j*sz, w: sz, h: sz, fill: _boxColor1);
+            } else if ((i + j) % 2 == 0) {
+              squares["$i $j"] = new BoardSquare(col: i, row: j, x: i*sz, y: j*sz, w: sz, h: sz, fill: _boxColor2);
             }
         }
     }
-    ctx.fillStyle = "rgb(251,246,229)";
-    for (i = 0; i < 8; i++) {
-        for (j = 0; j < 8; j++) {
-            if ((i + j) % 2 == 0) {
-                ctx.fillRect (i*sz, j*sz, sz, sz);
-            }
-        }
+  }
+   
+  void highlight(int col, int row) {
+    if (squares.containsKey("$col $row")) {
+      squares["$col $row"].highlighted = true;
     }
+  }
+  
+  void select(int x, int y) {
+    BoardSquare boardsquare;
+    
+    squares.forEach((k, v) {
+      if (v.contains(x, y)) {
+        v.highlighted = true;
+        boardsquare = v;
+      } else {
+        v.highlighted = false;
+      }
+    });
+    
+    if (boardsquare != null && piecemoves != null) {
+      piecemoves(boardsquare);
+    }
+  }
+  
+  
+  
+  draw() {
+    squares.forEach((k,v) => v.draw(ctx));
   }
 }

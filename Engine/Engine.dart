@@ -113,6 +113,7 @@ class Engine {
       return ChessBoard.Squares[index].PlacedPiece.PieceType;
   }
   
+// TODO: GetValidMoves should return empty list
   List<List<int>> GetValidMoves(int boardColumn, int boardRow)
   {
       int index = _GetBoardIndex(boardColumn, boardRow);
