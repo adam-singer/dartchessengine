@@ -1,10 +1,12 @@
 
-
 class Board {
+  ChessEngine.Engine engine;
   CanvasRenderingContext2D ctx;
+  List<Piece> pieces;
   int ratio;
   int width;
   int height; 
+  BoardSquare selectedSquare;
   Map<String, BoardSquare> highlightsquares;
   Map<String, BoardSquare> squares; 
   Function piecemoves;
@@ -13,7 +15,7 @@ class Board {
   final _boxColor1 = "rgb(0, 127, 0)";
   final _boxColor2 = "rgb(251, 246, 229)";
   
-  Board(this.ctx, [this.height = 400, this.width = 400]) {
+  Board(this.ctx, this.engine, [this.height = 400, this.width = 400]) {
     ratio = (height / width).toInt();
     highlightsquares = {};
     squares = {};
@@ -38,20 +40,79 @@ class Board {
     }
   }
   
-  void select(int x, int y) {
-    BoardSquare boardsquare;
-    
-    squares.forEach((k, v) {
-      if (v.contains(x, y)) {
-        v.highlighted = true;
-        boardsquare = v;
-      } else {
-        v.highlighted = false;
-      }
-    });
-    
-    if (boardsquare != null && piecemoves != null) {
-      piecemoves(boardsquare);
+  void selectSquare(int x, int y) {
+    // This smells of state pattern
+    if (selectedSquare == null) {
+      squares.forEach((k, v) {
+        if (v.contains(x, y)) {
+          
+          print("engine.IsSquareWhoseMove(v.col, v.row) = ${engine.IsSquareWhoseMove(v.col, v.row)}");
+          if (engine.IsSquareWhoseMove(v.col, v.row)) {
+            v.highlighted = true;
+            selectedSquare = v;
+          }
+        } else {
+          v.highlighted = false;
+        }
+      });
+    } else {
+      bool selectedSquareMoves = true;
+      var tmp_selectedSquare = null;
+      squares.forEach((k, v) {
+        if (v.contains(x, y)) {
+          if (engine.IsSquareWhoseMove(v.col, v.row)) {
+            v.highlighted = true;
+            tmp_selectedSquare = v;
+            selectedSquareMoves = false;
+          }
+        } else {
+          v.highlighted = false;
+        }
+      });
+      
+        if (selectedSquareMoves == false && tmp_selectedSquare != null) {
+          selectedSquare = tmp_selectedSquare;
+        } else {
+          // possible attacking or move selected
+         
+          BoardSquare dest_square;
+          squares.forEach((kk, vv) {
+            if (vv.contains(x, y)) {
+              dest_square = vv;
+            } 
+          });
+          
+          if (dest_square != null) {
+          
+            bool validMove = engine.IsValidMove(selectedSquare.col, selectedSquare.row, 
+              dest_square.col, dest_square.row);
+            
+            print("validMove = ${validMove}");
+            
+            if (validMove) {
+              bool moveSuccess = engine.MovePiece(selectedSquare.col, selectedSquare.row, 
+                dest_square.col, dest_square.row);
+              
+              print("selectedSquare.col = ${selectedSquare.col}");
+              print("selectedSquare.row = ${selectedSquare.row}");
+              print("dest_square.col = ${dest_square.col}");
+              print("dest_square.row = ${dest_square.row}");
+              
+              String src_sq =  Utils.toSquare(1 + selectedSquare.col, 8 - selectedSquare.row);
+              String dest_sq = Utils.toSquare(1 + dest_square.col, 8 - dest_square.row);
+              print("src_sq = ${src_sq}");
+              print("dest_sq = ${dest_sq}");
+              
+              pieces.forEach((p){
+                if (p.sq == src_sq) {
+                  print("setting p=${p} .sq = ${dest_sq}");
+                  p.sq = dest_sq;
+                }
+              });
+              
+            }
+          }
+        }
     }
   }
   

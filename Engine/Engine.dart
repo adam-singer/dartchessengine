@@ -52,8 +52,27 @@ class Engine {
       {
           return false;
       }
-
+      
       return ChessBoard.Squares[index].PlacedPiece.Selected;
+  }
+  
+  Map GetCurrentPieceSelected() {
+    var ret_map = {}; // TODO: refactor this into a real structure
+    for (int i=0; i<8; i++) {
+      for (int j=0; j<8; j++) {
+        if (GetChessPieceSelected(i, j)) {
+          int index = _GetBoardIndex(i, j);
+          
+          ret_map["col"] = i;
+          ret_map["row"] = j;
+          ret_map["piece"] = ChessBoard.Squares[index].PlacedPiece;
+          //print("ret_map = ${ret_map}");
+          return ret_map;
+        }
+      }
+    }
+    
+    return ret_map;
   }
   
   List<int> GetEnPassantMoves()
@@ -136,6 +155,32 @@ class Engine {
       }
 
       return returnArray;
+  }
+  
+  bool IsSquareWhoseMove(int col, row) {
+    if (ChessBoard == null)
+    {
+        return false;
+    }
+
+    if (ChessBoard.Squares == null)
+    {
+        return false;
+    }
+    
+    int index = _GetBoardIndex(col, row);
+
+    if (ChessBoard.Squares[index].PlacedPiece == null)
+    {
+        return false;
+    }
+    
+    if (GetPieceColorAtIndex(index) == WhoseMove && GetPieceTypeAtIndex(index) != ChessPieceType.None) {
+      return true;
+    } else {
+      return false;
+    }
+    
   }
   
   bool IsValidMove(int sourceColumn, int sourceRow, int destinationColumn, int destinationRow)

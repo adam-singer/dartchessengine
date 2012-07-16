@@ -11,15 +11,15 @@ void main() {
   CanvasElement canvas = query("#board");
   CanvasRenderingContext2D ctx = canvas.getContext("2d");
   
-  Board board = new Board(ctx, height: canvas.height, width: canvas.width);
+  Board board = new Board(ctx, null, height: canvas.height, width: canvas.width);
   
   canvas.on.mouseDown.add((MouseEvent e) {
-    board.select(e.offsetX, e.offsetY);
+    board.selectSquare(e.offsetX, e.offsetY);
   });
   
   canvas.on.touchStart.add((TouchEvent t) {
     if (t.touches.length == 1) {
-      board.select(t.touches[0].clientX, t.touches[0].clientY); 
+      board.selectSquare(t.touches[0].clientX, t.touches[0].clientY); 
     }
   });
   

@@ -16,7 +16,7 @@ class Utils {
     return _row;
   }
   
-  static toSquare(_col, _row) {
+  static String toSquare(_col, _row) {
     if (_row < 1 || _row > 8 || _col < 1 || _col > 8) {
       return null;
     }

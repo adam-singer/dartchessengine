@@ -12,7 +12,7 @@ class Piece {
   int LastValidMoveCount;
   bool Moved;
 
-  bool Selected;
+  bool Selected = false;
 
   List<int> ValidMoves;
   
