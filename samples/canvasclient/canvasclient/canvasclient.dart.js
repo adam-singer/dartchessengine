@@ -42,13 +42,13 @@ $$.HashMapImplementation = {"":
   if (typeof length$ !== 'number') return this.forEach$1$bailout(1, f, length$);
   for (var i = 0; i < length$; ++i) {
     var key = $.index(this._keys, i);
-    !(key == null) && !(key === $.CTC3) && f.$call$2(key, $.index(this._values, i));
+    !(key == null) && !(key === $.CTC29) && f.$call$2(key, $.index(this._values, i));
   }
  },
  forEach$1$bailout: function(state, f, length$) {
   for (var i = 0; $.ltB(i, length$); ++i) {
     var key = $.index(this._keys, i);
-    !(key == null) && !(key === $.CTC3) && f.$call$2(key, $.index(this._values, i));
+    !(key == null) && !(key === $.CTC29) && f.$call$2(key, $.index(this._values, i));
   }
  },
  get$length: function() {
@@ -65,7 +65,7 @@ $$.HashMapImplementation = {"":
  operator$indexSet$2: function(key, value) {
   this._ensureCapacity$0();
   var index = this._probeForAdding$1(key);
-  if ($.index(this._keys, index) == null || $.index(this._keys, index) === $.CTC3) this._numberOfEntries = $.add(this._numberOfEntries, 1);
+  if ($.index(this._keys, index) == null || $.index(this._keys, index) === $.CTC29) this._numberOfEntries = $.add(this._numberOfEntries, 1);
   $.indexSet(this._keys, index, key);
   $.indexSet(this._values, index, value);
  },
@@ -101,7 +101,7 @@ $$.HashMapImplementation = {"":
     t1 = oldKeys.length;
     if (i < 0 || i >= t1) throw $.ioore(i);
     var t2 = oldKeys[i];
-    if (t2 == null || t2 === $.CTC3) continue;
+    if (t2 == null || t2 === $.CTC29) continue;
     t1 = oldValues.length;
     if (i < 0 || i >= t1) throw $.ioore(i);
     var t3 = oldValues[i];
@@ -147,7 +147,7 @@ $$.HashMapImplementation = {"":
       this._values = t1;
       for (var i = 0; $.ltB(i, capacity); ++i) {
         var key = $.index(oldKeys, i);
-        if (key == null || key === $.CTC3) continue;
+        if (key == null || key === $.CTC29) continue;
         var value = $.index(oldValues, i);
         var newIndex = this._probeForAdding$1(key);
         $.indexSet(this._keys, newIndex, key);
@@ -190,7 +190,7 @@ $$.HashMapImplementation = {"":
       return insertionIndex;
     }
     if ($.eqB(t1, key)) return hash;
-    if (insertionIndex < 0 && $.CTC3 === t1) insertionIndex = hash;
+    if (insertionIndex < 0 && $.CTC29 === t1) insertionIndex = hash;
     var numberOfProbes0 = numberOfProbes + 1;
     hash = $.HashMapImplementation__nextProbe(hash, numberOfProbes, $.get$length(this._keys));
     if (hash !== (hash | 0)) return this._probeForAdding$1$bailout(3, key, numberOfProbes0, insertionIndex, hash, 0);
@@ -239,7 +239,7 @@ $$.HashMapImplementation = {"":
               return insertionIndex;
             }
             if ($.eqB(existingKey, key)) return hash;
-            if ($.ltB(insertionIndex, 0) && $.CTC3 === existingKey) insertionIndex = hash;
+            if ($.ltB(insertionIndex, 0) && $.CTC29 === existingKey) insertionIndex = hash;
             var numberOfProbes0 = numberOfProbes + 1;
             hash = $.HashMapImplementation__nextProbe(hash, numberOfProbes, $.get$length(this._keys));
           case 3:
@@ -321,7 +321,7 @@ $$.HashSetIterator = {"":
     var t3 = t1.length;
     if (t2 < 0 || t2 >= t3) throw $.ioore(t2);
     entry = t1[t2];
-  } while ((entry == null || entry === $.CTC3));
+  } while ((entry == null || entry === $.CTC29));
  },
  _advance$0$bailout: function(state, t1) {
   var length$ = $.get$length(t1);
@@ -331,7 +331,7 @@ $$.HashSetIterator = {"":
     this._nextValidIndex = t2;
     if ($.geB(t2, length$)) break;
     entry = $.index(t1, this._nextValidIndex);
-  } while ((entry == null || entry === $.CTC3));
+  } while ((entry == null || entry === $.CTC29));
  },
  next$0: function() {
   if (this.hasNext$0() !== true) throw $.captureStackTrace($.CTC1);
@@ -358,12 +358,12 @@ $$.HashSetIterator = {"":
   if (t1 >= t3) return false;
   if (t1 !== (t1 | 0)) throw $.iae(t1);
   if (t1 < 0 || t1 >= t3) throw $.ioore(t1);
-  t2[t1] === $.CTC3 && this._advance$0();
+  t2[t1] === $.CTC29 && this._advance$0();
   return this._nextValidIndex < t2.length;
  },
  hasNext$0$bailout: function(state, t1, t2) {
   if ($.geB(t1, $.get$length(t2))) return false;
-  $.index(t2, this._nextValidIndex) === $.CTC3 && this._advance$0();
+  $.index(t2, this._nextValidIndex) === $.CTC29 && this._advance$0();
   return $.lt(this._nextValidIndex, $.get$length(t2));
  },
  HashSetIterator$1: function(set_) {
@@ -500,13 +500,13 @@ $$._DoubleLinkedQueueEntrySentinel = {"":
  ["_element", "_next", "_previous"],
  super: "DoubleLinkedQueueEntry",
  get$element: function() {
-  throw $.captureStackTrace($.CTC2);
+  throw $.captureStackTrace($.CTC28);
  },
  _asNonSentinelEntry$0: function() {
   return;
  },
  remove$0: function() {
-  throw $.captureStackTrace($.CTC2);
+  throw $.captureStackTrace($.CTC28);
  },
  _DoubleLinkedQueueEntrySentinel$0: function() {
   this._link$2(this, this);
@@ -939,32 +939,127 @@ $$.IllegalJSRegExpException = {"":
  }
 };
 
-$$.Board = {"":
- ["_boxColor2", "_boxColor1", "_highlightColor", "piecemoves", "squares", "highlightsquares", "height=", "width=", "ratio", "ctx?"],
+$$.Game = {"":
+ ["_ratio", "_ctx", "canvas", "pieces!", "board?", "engine?"],
+ super: "Object",
+ anim$1: function(i) {
+  this.draw$0();
+  $.window().requestAnimationFrame$1(this.get$anim());
+ },
+ get$anim: function() { return new $.BoundClosure(this, 'anim$1'); },
+ draw$0: function() {
+  this.board.draw$0();
+  $.forEach(this.pieces, new $.Game_draw_anon());
+ },
+ Game$2: function(canvas, engine) {
+  var t1 = this.canvas;
+  this._ctx = t1.getContext$1('2d');
+  var t2 = this._ctx;
+  this.board = $.Board$0(t2, this.engine, t1.get$height(), t1.get$width());
+  var t3 = this.board;
+  this._ratio = t3.get$ratio();
+  this.pieces = [];
+  var t4 = this.pieces;
+  var t5 = this._ratio;
+  $.add$1(t4, $.Piece$(t2, t5, 'White King', $.PieceData_wk, 'e1'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black King', $.PieceData_bk, 'e8'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Queen', $.PieceData_wq, 'd1'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Queen', $.PieceData_bq, 'd8'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Bishop', $.PieceData_wb, 'c1'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Bishop', $.PieceData_wb, 'f1'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Bishop', $.PieceData_bb, 'c8'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Bishop', $.PieceData_bb, 'f8'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Knight', $.PieceData_wn, 'b1'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Knight', $.PieceData_wn, 'g1'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Knight', $.PieceData_bn, 'b8'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Knight', $.PieceData_bn, 'g8'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Rook', $.PieceData_wr, 'a1'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Rook', $.PieceData_wr, 'h1'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Rook', $.PieceData_br, 'a8'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Rook', $.PieceData_br, 'h8'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Pawn', $.PieceData_wp, 'a2'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Pawn', $.PieceData_wp, 'b2'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Pawn', $.PieceData_wp, 'c2'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Pawn', $.PieceData_wp, 'd2'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Pawn', $.PieceData_wp, 'e2'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Pawn', $.PieceData_wp, 'f2'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Pawn', $.PieceData_wp, 'g2'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'White Pawn', $.PieceData_wp, 'h2'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Pawn', $.PieceData_bp, 'a7'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Pawn', $.PieceData_bp, 'b7'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Pawn', $.PieceData_bp, 'c7'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Pawn', $.PieceData_bp, 'd7'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Pawn', $.PieceData_bp, 'e7'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Pawn', $.PieceData_bp, 'f7'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Pawn', $.PieceData_bp, 'g7'));
+  $.add$1(this.pieces, $.Piece$(t2, t5, 'Black Pawn', $.PieceData_bp, 'h7'));
+  t3.set$pieces(this.pieces);
+  $.add$1(t1.get$on().get$mouseDown(), new $.anon0(this));
+ }
+};
+
+$$.Board0 = {"":
+ ["_boxColor2", "_boxColor1", "_highlightColor", "piecemoves", "squares", "highlightsquares", "selectedSquare!", "height=", "width=", "ratio?", "pieces!", "ctx?", "engine?"],
  super: "Object",
  draw$0: function() {
   $.forEach(this.squares, new $.Board_draw_anon(this));
  },
- select$2: function(x, y) {
+ selectSquare$2: function(x, y) {
   var t1 = ({});
-  t1.boardsquare_1 = null;
-  $.forEach(this.squares, new $.Board_select_anon(x, t1, y));
-  t1 = t1.boardsquare_1;
-  !(t1 == null) && !(this.piecemoves == null) && this.piecemoves$1(t1);
+  var t2 = this.selectedSquare == null;
+  var t3 = this.squares;
+  if (t2) $.forEach(t3, new $.Board_selectSquare_anon(this, x, y));
+  else {
+    t1.selectedSquareMoves_1 = true;
+    t1.tmp_selectedSquare_2 = null;
+    $.forEach(t3, new $.Board_selectSquare_anon0(this, x, t1, y));
+    if ($.eqB(t1.selectedSquareMoves_1, false) && !(t1.tmp_selectedSquare_2 == null)) this.selectedSquare = t1.tmp_selectedSquare_2;
+    else {
+      t1.dest_square_3 = null;
+      $.forEach(t3, new $.Board_selectSquare_anon1(x, t1, y));
+      if (!(t1.dest_square_3 == null)) {
+        t2 = this.engine;
+        var validMove = t2.IsValidMove$4(this.selectedSquare.get$col(), this.selectedSquare.get$row(), t1.dest_square_3.get$col(), t1.dest_square_3.get$row());
+        $.print('validMove = ' + $.S(validMove));
+        if (validMove === true) {
+          t2.MovePiece$4(this.selectedSquare.get$col(), this.selectedSquare.get$row(), t1.dest_square_3.get$col(), t1.dest_square_3.get$row());
+          $.print('selectedSquare.col = ' + $.S(this.selectedSquare.get$col()));
+          $.print('selectedSquare.row = ' + $.S(this.selectedSquare.get$row()));
+          $.print('dest_square.col = ' + $.S(t1.dest_square_3.get$col()));
+          $.print('dest_square.row = ' + $.S(t1.dest_square_3.get$row()));
+          t2 = this.selectedSquare.get$col();
+          if (typeof t2 !== 'number') throw $.iae(t2);
+          ++t2;
+          t3 = this.selectedSquare.get$row();
+          if (typeof t3 !== 'number') throw $.iae(t3);
+          var src_sq = $.Utils_toSquare(t2, 8 - t3);
+          t2 = t1.dest_square_3.get$col();
+          if (typeof t2 !== 'number') throw $.iae(t2);
+          ++t2;
+          var t4 = t1.dest_square_3.get$row();
+          if (typeof t4 !== 'number') throw $.iae(t4);
+          var dest_sq = $.Utils_toSquare(t2, 8 - t4);
+          $.print('src_sq = ' + $.S(src_sq));
+          $.print('dest_sq = ' + $.S(dest_sq));
+          $.forEach(this.pieces, new $.Board_selectSquare_anon2(dest_sq, src_sq));
+          this.selectedSquare = null;
+        }
+      }
+    }
+  }
  },
  highlight$2: function(col, row) {
   var t1 = this.squares;
   t1.containsKey$1($.S(col) + ' ' + $.S(row)) === true && $.index(t1, $.S(col) + ' ' + $.S(row)).set$highlighted(true);
  },
- piecemoves$1: function(arg0) { return this.piecemoves.$call$1(arg0); },
- Board$3: function(ctx, height, width) {
+ Board$4: function(ctx, engine, height, width) {
   this.ratio = $.toInt($.div(this.height, this.width));
   this.highlightsquares = $.makeLiteralMap([]);
   this.squares = $.makeLiteralMap([]);
   var t1 = this.ratio;
   if (typeof t1 !== 'number') throw $.iae(t1);
   var sz = 50 * t1;
-  for (t1 = this.squares, t2 = this._boxColor1, t3 = this._boxColor2, i = 0, j = null; i < 8; ++i) {
+  for (t1 = this.squares, t2 = this._boxColor1, t3 = this._boxColor2, j = null, i = 0; i < 8; ++i) {
     for (var t4 = i * sz, j = 0; j < 8; ++j) {
       var t5 = $.mod(i + j, 2);
       if (t5 === 1) $.indexSet(t1, $.S(i) + ' ' + $.S(j), $.BoardSquare$(i, j, t4, j * sz, sz, sz, t2, false, 'rgba(207, 247, 0, 0.9)'));
@@ -973,7 +1068,7 @@ $$.Board = {"":
       }
     }
   }
-  var j, t3, t2, i;
+  var i, t3, t2, j;
  }
 };
 
@@ -1004,20 +1099,19 @@ $$.BoardSquare = {"":
  }
 };
 
-$$.Piece = {"":
- ["name", "sz", "data", "sq", "ctx?", "ratio", "img"],
+$$.Piece0 = {"":
+ ["name", "sz", "data", "sq=", "ctx?", "ratio?", "img"],
  super: "Object",
  draw$0: function() {
-  var t1 = this.sq;
-  var t2 = $.sub($.charCodeAt(t1, 0), 97);
-  var t3 = this.sz;
-  var x = $.mul(t2, t3);
+  var t1 = $.sub($.charCodeAt(this.sq, 0), 97);
+  var t2 = this.sz;
+  var x = $.mul(t1, t2);
+  if (typeof t2 !== 'number') throw $.iae(t2);
+  t1 = 8 * t2;
+  var t3 = $.mul($.sub($.charCodeAt(this.sq, 1), 48), t2);
   if (typeof t3 !== 'number') throw $.iae(t3);
-  t2 = 8 * t3;
-  var t4 = $.mul($.sub($.charCodeAt(t1, 1), 48), t3);
-  if (typeof t4 !== 'number') throw $.iae(t4);
-  var y = t2 - t4;
-  this.ctx.drawImage$5(this.img, x, y, t3, t3);
+  var y = t1 - t3;
+  this.ctx.drawImage$5(this.img, x, y, t2, t2);
  },
  Piece$5: function(ctx, ratio, name$, data, sq) {
   this.sz = $.mul(this.ratio, 50);
@@ -1025,7 +1119,7 @@ $$.Piece = {"":
   var t1 = this.data;
   var t2 = this.img;
   t2.set$src(t1);
-  $.add$1(t2.get$on().get$load(), new $.anon(this));
+  $.add$1(t2.get$on().get$load(), new $.anon1(this));
  }
 };
 
@@ -1070,13 +1164,6 @@ $$._DeprecatedPeerConnectionEventsImpl = {"":
 $$._DocumentEventsImpl = {"":
  ["_ptr"],
  super: "_ElementEventsImpl",
- get$touchStart: function() {
-  return this.operator$index$1('touchstart');
- },
- get$select: function() {
-  return this.operator$index$1('select');
- },
- select$2: function(arg0, arg1) { return this.get$select().$call$2(arg0, arg1); },
  get$reset: function() {
   return this.operator$index$1('reset');
  },
@@ -1092,13 +1179,6 @@ $$._DocumentEventsImpl = {"":
 $$._ElementEventsImpl = {"":
  ["_ptr"],
  super: "_EventsImpl",
- get$touchStart: function() {
-  return this.operator$index$1('touchstart');
- },
- get$select: function() {
-  return this.operator$index$1('select');
- },
- select$2: function(arg0, arg1) { return this.get$select().$call$2(arg0, arg1); },
  get$reset: function() {
   return this.operator$index$1('reset');
  },
@@ -1223,10 +1303,6 @@ $$._PeerConnection00EventsImpl = {"":
 $$._SVGElementInstanceEventsImpl = {"":
  ["_ptr"],
  super: "_EventsImpl",
- get$select: function() {
-  return this.operator$index$1('select');
- },
- select$2: function(arg0, arg1) { return this.get$select().$call$2(arg0, arg1); },
  get$reset: function() {
   return this.operator$index$1('reset');
  },
@@ -1272,13 +1348,6 @@ $$._WebSocketEventsImpl = {"":
 $$._WindowEventsImpl = {"":
  ["_ptr"],
  super: "_EventsImpl",
- get$touchStart: function() {
-  return this.operator$index$1('touchstart');
- },
- get$select: function() {
-  return this.operator$index$1('select');
- },
- select$2: function(arg0, arg1) { return this.get$select().$call$2(arg0, arg1); },
  get$reset: function() {
   return this.operator$index$1('reset');
  },
@@ -1985,6 +2054,7 @@ $$.PieceMoves = {"":
  Position$2$bailout: function(state, col, row) {
   return $.add(col, $.mul(row, 8));
  },
+ get$Position: function() { return new $.BoundClosure1(this, 'Position$2'); },
  SetMovesKing$0: function() {
   for (var y = 0; y < 8; ++y) {
     for (var t1 = y > 0, col = y - 1, t2 = y < 7, col0 = y + 1, x = 0; x < 8; ++x) {
@@ -2443,59 +2513,83 @@ $$.ChessPieceType = {"":
  }
 };
 
-$$.Piece0 = {"":
- ["ValidMoves=", "Selected", "Moved=", "LastValidMoveCount", "DefendedValue=", "AttackedValue=", "PieceActionValue?", "PieceValue", "PieceType?", "PieceColor?"],
+$$.Piece = {"":
+ ["ValidMoves=", "Selected!", "Moved=", "LastValidMoveCount", "DefendedValue=", "AttackedValue=", "PieceActionValue?", "PieceValue?", "PieceType=", "PieceColor?"],
  super: "Object",
  _CalculatePieceValue$1: function(pieceType) {
   $0:{
     var t1 = pieceType.get$value();
-    if ($.eqB($.CTC5.get$value(), t1)) return 100;
-    if ($.eqB($.CTC7.get$value(), t1)) return 320;
-    if ($.eqB($.CTC8.get$value(), t1)) return 325;
-    if ($.eqB($.CTC9.get$value(), t1)) return 500;
-    if ($.eqB($.CTC10.get$value(), t1)) return 975;
-    if ($.eqB($.CTC11.get$value(), t1)) return 32767;
+    if ($.eqB($.CTC3.get$value(), t1)) return 100;
+    if ($.eqB($.CTC5.get$value(), t1)) return 320;
+    if ($.eqB($.CTC6.get$value(), t1)) return 325;
+    if ($.eqB($.CTC7.get$value(), t1)) return 500;
+    if ($.eqB($.CTC8.get$value(), t1)) return 975;
+    if ($.eqB($.CTC9.get$value(), t1)) return 32767;
     return 0;
   }
  },
  _CalculatePieceActionValue$1: function(pieceType) {
   $0:{
     var t1 = pieceType.get$value();
-    if ($.eqB($.CTC5.get$value(), t1)) return 6;
-    if ($.eqB($.CTC7.get$value(), t1)) return 3;
-    if ($.eqB($.CTC8.get$value(), t1)) return 3;
-    if ($.eqB($.CTC9.get$value(), t1)) return 2;
-    if ($.eqB($.CTC10.get$value(), t1)) return 1;
-    if ($.eqB($.CTC11.get$value(), t1)) return 1;
+    if ($.eqB($.CTC3.get$value(), t1)) return 6;
+    if ($.eqB($.CTC5.get$value(), t1)) return 3;
+    if ($.eqB($.CTC6.get$value(), t1)) return 3;
+    if ($.eqB($.CTC7.get$value(), t1)) return 2;
+    if ($.eqB($.CTC8.get$value(), t1)) return 1;
+    if ($.eqB($.CTC9.get$value(), t1)) return 1;
     return 0;
   }
+ },
+ Piece$fromPiece$1: function(piece) {
+  this.PieceColor = piece.get$PieceColor();
+  this.PieceType = piece.get$PieceType();
+  this.Moved = piece.get$Moved();
+  this.PieceValue = piece.get$PieceValue();
+  this.PieceActionValue = piece.get$PieceActionValue();
+  if (!(piece.get$ValidMoves() == null)) this.LastValidMoveCount = $.get$length(piece.get$ValidMoves());
  },
  Piece$fromType$2: function(chessPiece, chessPieceColor) {
   this.PieceType = chessPiece;
   this.PieceColor = chessPieceColor;
-  var t1 = this.PieceType;
-  if ($.eqB(t1, $.CTC5) || $.eqB(t1, $.CTC7)) this.LastValidMoveCount = 2;
+  if ($.eqB(this.PieceType, $.CTC3) || $.eqB(this.PieceType, $.CTC5)) this.LastValidMoveCount = 2;
   else this.LastValidMoveCount = 0;
   this.ValidMoves = [];
-  this.PieceValue = this._CalculatePieceValue$1(t1);
-  this.PieceActionValue = this._CalculatePieceActionValue$1(t1);
+  this.PieceValue = this._CalculatePieceValue$1(this.PieceType);
+  this.PieceActionValue = this._CalculatePieceActionValue$1(this.PieceType);
  }
 };
 
 $$.Square = {"":
  ["PlacedPiece="],
  super: "Object",
+ Square$1: function(piece) {
+  this.PlacedPiece = $.Piece$fromPiece(piece);
+ },
  Square$empty$0: function() {
   this.PlacedPiece = null;
  }
 };
 
 $$.PieceMoving = {"":
- ["SrcPosition?", "PieceType?", "PieceColor?", "Moved=", "DstPosition?"],
+ ["SrcPosition?", "PieceType=", "PieceColor?", "Moved=", "DstPosition?"],
  super: "Object",
+ PieceMoving$5: function(pieceColor, pieceType, moved, srcPosition, dstPosition) {
+  this.PieceColor = pieceColor;
+  this.PieceType = pieceType;
+  this.SrcPosition = srcPosition;
+  this.DstPosition = dstPosition;
+  this.Moved = moved;
+ },
+ PieceMoving$fromPieceMoving$1: function(pieceMoving) {
+  this.PieceColor = pieceMoving.get$PieceColor();
+  this.PieceType = pieceMoving.get$PieceType();
+  this.SrcPosition = pieceMoving.get$SrcPosition();
+  this.DstPosition = pieceMoving.get$DstPosition();
+  this.Moved = pieceMoving.get$Moved();
+ },
  PieceMoving$fromChessPieceType$1: function(pieceType) {
   this.PieceType = pieceType;
-  this.PieceColor = $.CTC4;
+  this.PieceColor = $.CTC2;
   this.SrcPosition = 0;
   this.DstPosition = 0;
   this.Moved = false;
@@ -2503,10 +2597,16 @@ $$.PieceMoving = {"":
 };
 
 $$.PieceTaken = {"":
- ["Position", "PieceType?", "PieceColor?", "Moved="],
+ ["Position?", "PieceType=", "PieceColor?", "Moved="],
  super: "Object",
+ PieceTaken$4: function(pieceColor, pieceType, moved, position) {
+  this.PieceColor = pieceColor;
+  this.PieceType = pieceType;
+  this.Position = position;
+  this.Moved = moved;
+ },
  PieceTaken$fromChessPieceType$1: function(pieceType) {
-  this.PieceColor = $.CTC4;
+  this.PieceColor = $.CTC2;
   this.PieceType = pieceType;
   this.Position = 0;
   this.Moved = false;
@@ -2514,56 +2614,54 @@ $$.PieceTaken = {"":
 };
 
 $$.MoveContent = {"":
- ["TakenPiece", "PawnPromoted", "MovingPieceSecondary", "MovingPiecePrimary", "EnPassantOccured"],
+ ["TakenPiece=", "PawnPromoted=", "MovingPieceSecondary=", "MovingPiecePrimary=", "EnPassantOccured="],
  super: "Object",
  toString$0: function() {
   var value = $.StringBufferImpl$('');
-  var t1 = this.MovingPiecePrimary;
-  var srcCol = $.toInt($.mod(t1.get$SrcPosition(), 8));
-  var t2 = $.div(t1.get$SrcPosition(), 8);
+  var srcCol = $.toInt($.mod(this.MovingPiecePrimary.get$SrcPosition(), 8));
+  var t1 = $.div(this.MovingPiecePrimary.get$SrcPosition(), 8);
+  if (typeof t1 !== 'number') throw $.iae(t1);
+  var srcRow = $.toInt(8 - t1);
+  var dstCol = $.toInt($.mod(this.MovingPiecePrimary.get$DstPosition(), 8));
+  var t2 = $.div(this.MovingPiecePrimary.get$DstPosition(), 8);
   if (typeof t2 !== 'number') throw $.iae(t2);
-  var srcRow = $.toInt(8 - t2);
-  var dstCol = $.toInt($.mod(t1.get$DstPosition(), 8));
-  var t3 = $.div(t1.get$DstPosition(), 8);
-  if (typeof t3 !== 'number') throw $.iae(t3);
-  var dstRow = $.toInt(8 - t3);
-  t2 = this.MovingPieceSecondary;
-  if ($.eqB(t2.get$PieceType(), $.CTC9)) {
-    if ($.eqB(t2.get$PieceColor(), $.CTC6)) {
-      if ($.eqB(t2.get$SrcPosition(), 7)) value.add$1('O-O');
+  var dstRow = $.toInt(8 - t2);
+  if ($.eqB(this.MovingPieceSecondary.get$PieceType(), $.CTC7)) {
+    if ($.eqB(this.MovingPieceSecondary.get$PieceColor(), $.CTC4)) {
+      if ($.eqB(this.MovingPieceSecondary.get$SrcPosition(), 7)) value.add$1('O-O');
       else {
-        $.eqB(t2.get$SrcPosition(), 0) && value.add$1('O-O-O');
+        $.eqB(this.MovingPieceSecondary.get$SrcPosition(), 0) && value.add$1('O-O-O');
       }
     } else {
-      if ($.eqB(t2.get$PieceColor(), $.CTC4)) {
-        if ($.eqB(t2.get$SrcPosition(), 63)) value.add$1('O-O');
+      if ($.eqB(this.MovingPieceSecondary.get$PieceColor(), $.CTC2)) {
+        if ($.eqB(this.MovingPieceSecondary.get$SrcPosition(), 63)) value.add$1('O-O');
         else {
-          $.eqB(t2.get$SrcPosition(), 56) && value.add$1('O-O-O');
+          $.eqB(this.MovingPieceSecondary.get$SrcPosition(), 56) && value.add$1('O-O-O');
         }
       }
     }
   } else {
-    value.add$1($.toString(this._GetPgnMove$1(t1.get$PieceType())));
+    value.add$1($.toString(this._GetPgnMove$1(this.MovingPiecePrimary.get$PieceType())));
     $0:{
-      t2 = t1.get$PieceType().get$value();
-      if ($.eqB($.CTC7.get$value(), t2)) {
+      t1 = this.MovingPiecePrimary.get$PieceType().get$value();
+      if ($.eqB($.CTC5.get$value(), t1)) {
         value.add$1($.toString(this._GetColumnFromInt$1(srcCol)));
         value.add$1($.toString(srcRow));
         break $0;
       } else {
-        if ($.eqB($.CTC9.get$value(), t2)) {
+        if ($.eqB($.CTC7.get$value(), t1)) {
           value.add$1($.toString(this._GetColumnFromInt$1(srcCol)));
           value.add$1($.toString(srcRow));
           break $0;
         } else {
-          if ($.eqB($.CTC5.get$value(), t2)) {
+          if ($.eqB($.CTC3.get$value(), t1)) {
             !$.eqB(srcCol, dstCol) && value.add$1($.toString(this._GetColumnFromInt$1(srcCol)));
             break $0;
           }
         }
       }
     }
-    !$.eqB(this.TakenPiece.get$PieceType(), $.CTC12) && value.add$1('x');
+    !$.eqB(this.TakenPiece.get$PieceType(), $.CTC10) && value.add$1('x');
     value.add$1($.toString(this._GetColumnFromInt$1(dstCol)));
     value.add$1($.toString(dstRow));
     this.PawnPromoted === true && value.add$1('=Q');
@@ -2573,11 +2671,11 @@ $$.MoveContent = {"":
  _GetPgnMove$1: function(pieceType) {
   $0:{
     var t1 = pieceType.get$value();
-    if ($.eqB($.CTC8.get$value(), t1)) return 'B';
-    if ($.eqB($.CTC11.get$value(), t1)) return 'K';
-    if ($.eqB($.CTC7.get$value(), t1)) return 'N';
-    if ($.eqB($.CTC10.get$value(), t1)) return 'Q';
-    if ($.eqB($.CTC9.get$value(), t1)) return 'R';
+    if ($.eqB($.CTC6.get$value(), t1)) return 'B';
+    if ($.eqB($.CTC9.get$value(), t1)) return 'K';
+    if ($.eqB($.CTC5.get$value(), t1)) return 'N';
+    if ($.eqB($.CTC8.get$value(), t1)) return 'Q';
+    if ($.eqB($.CTC7.get$value(), t1)) return 'R';
     return '';
   }
  },
@@ -2603,10 +2701,17 @@ $$.MoveContent = {"":
       return 'Unknown';
   }
  },
+ MoveContent$fromMoveContent$1: function(moveContent) {
+  this.MovingPiecePrimary = $.PieceMoving$fromPieceMoving(moveContent.get$MovingPiecePrimary());
+  this.MovingPieceSecondary = $.PieceMoving$fromPieceMoving(moveContent.get$MovingPieceSecondary());
+  this.TakenPiece = $.PieceTaken$(moveContent.get$TakenPiece().get$PieceColor(), moveContent.get$TakenPiece().get$PieceType(), moveContent.get$TakenPiece().get$Moved(), moveContent.get$TakenPiece().get$Position());
+  this.EnPassantOccured = moveContent.get$EnPassantOccured();
+  this.PawnPromoted = moveContent.get$PawnPromoted();
+ },
  MoveContent$0: function() {
-  this.MovingPiecePrimary = $.PieceMoving$fromChessPieceType($.CTC12);
-  this.MovingPieceSecondary = $.PieceMoving$fromChessPieceType($.CTC12);
-  this.TakenPiece = $.PieceTaken$fromChessPieceType($.CTC12);
+  this.MovingPiecePrimary = $.PieceMoving$fromChessPieceType($.CTC10);
+  this.MovingPieceSecondary = $.PieceMoving$fromChessPieceType($.CTC10);
+  this.TakenPiece = $.PieceTaken$fromChessPieceType($.CTC10);
  }
 };
 
@@ -2616,14 +2721,14 @@ $$.PieceValidMoves = {"":
  _GenerateValidMovesKingCastle$2: function(board, king) {
   if (king == null) return;
   if (king.get$Moved() === true) return;
-  if ($.eqB(king.get$PieceColor(), $.CTC4) && board.get$WhiteCastled() === true) return;
-  if ($.eqB(king.get$PieceColor(), $.CTC6) && board.get$BlackCastled() === true) return;
-  if ($.eqB(king.get$PieceColor(), $.CTC6) && board.get$BlackCheck() === true) return;
-  if ($.eqB(king.get$PieceColor(), $.CTC4) && board.get$WhiteCheck() === true) return;
-  if ($.eqB(king.get$PieceColor(), $.CTC4)) {
+  if ($.eqB(king.get$PieceColor(), $.CTC2) && board.get$WhiteCastled() === true) return;
+  if ($.eqB(king.get$PieceColor(), $.CTC4) && board.get$BlackCastled() === true) return;
+  if ($.eqB(king.get$PieceColor(), $.CTC4) && board.get$BlackCheck() === true) return;
+  if ($.eqB(king.get$PieceColor(), $.CTC2) && board.get$WhiteCheck() === true) return;
+  if ($.eqB(king.get$PieceColor(), $.CTC2)) {
     if (board.get$WhiteCheck() === true) return;
     if (!($.index(board.get$Squares(), 63).get$PlacedPiece() == null)) {
-      if ($.eqB($.index(board.get$Squares(), 63).get$PlacedPiece().get$PieceType(), $.CTC9)) {
+      if ($.eqB($.index(board.get$Squares(), 63).get$PlacedPiece().get$PieceType(), $.CTC7)) {
         if ($.eqB($.index(board.get$Squares(), 63).get$PlacedPiece().get$PieceColor(), king.get$PieceColor())) {
           if ($.index(board.get$Squares(), 62).get$PlacedPiece() == null) {
             if ($.index(board.get$Squares(), 61).get$PlacedPiece() == null) {
@@ -2637,7 +2742,7 @@ $$.PieceValidMoves = {"":
       }
     }
     if (!($.index(board.get$Squares(), 56).get$PlacedPiece() == null)) {
-      if ($.eqB($.index(board.get$Squares(), 56).get$PlacedPiece().get$PieceType(), $.CTC9)) {
+      if ($.eqB($.index(board.get$Squares(), 56).get$PlacedPiece().get$PieceType(), $.CTC7)) {
         if ($.eqB($.index(board.get$Squares(), 56).get$PlacedPiece().get$PieceColor(), king.get$PieceColor())) {
           if ($.index(board.get$Squares(), 57).get$PlacedPiece() == null) {
             if ($.index(board.get$Squares(), 58).get$PlacedPiece() == null) {
@@ -2653,10 +2758,10 @@ $$.PieceValidMoves = {"":
       }
     }
   } else {
-    if ($.eqB(king.get$PieceColor(), $.CTC6)) {
+    if ($.eqB(king.get$PieceColor(), $.CTC4)) {
       if (board.get$BlackCheck() === true) return;
       if (!($.index(board.get$Squares(), 7).get$PlacedPiece() == null)) {
-        if ($.eqB($.index(board.get$Squares(), 7).get$PlacedPiece().get$PieceType(), $.CTC9) && $.index(board.get$Squares(), 7).get$PlacedPiece().get$Moved() !== true) {
+        if ($.eqB($.index(board.get$Squares(), 7).get$PlacedPiece().get$PieceType(), $.CTC7) && $.index(board.get$Squares(), 7).get$PlacedPiece().get$Moved() !== true) {
           if ($.eqB($.index(board.get$Squares(), 7).get$PlacedPiece().get$PieceColor(), king.get$PieceColor())) {
             if ($.index(board.get$Squares(), 6).get$PlacedPiece() == null) {
               if ($.index(board.get$Squares(), 5).get$PlacedPiece() == null) {
@@ -2670,7 +2775,7 @@ $$.PieceValidMoves = {"":
         }
       }
       if (!($.index(board.get$Squares(), 0).get$PlacedPiece() == null)) {
-        if ($.eqB($.index(board.get$Squares(), 0).get$PlacedPiece().get$PieceType(), $.CTC9) && $.index(board.get$Squares(), 0).get$PlacedPiece().get$Moved() !== true) {
+        if ($.eqB($.index(board.get$Squares(), 0).get$PlacedPiece().get$PieceType(), $.CTC7) && $.index(board.get$Squares(), 0).get$PlacedPiece().get$Moved() !== true) {
           if ($.eqB($.index(board.get$Squares(), 0).get$PlacedPiece().get$PieceColor(), king.get$PieceColor())) {
             if ($.index(board.get$Squares(), 1).get$PlacedPiece() == null) {
               if ($.index(board.get$Squares(), 2).get$PlacedPiece() == null) {
@@ -2692,7 +2797,7 @@ $$.PieceValidMoves = {"":
   if (piece == null) return;
   for (var t1 = this._moveArrays, i = 0; $.ltB(i, $.index(t1.get$KingTotalMoves(), srcPosition)); ++i) {
     var dstPos = $.index($.index(t1.get$KingMoves(), srcPosition).get$Moves(), i);
-    if ($.eqB(piece.get$PieceColor(), $.CTC4)) {
+    if ($.eqB(piece.get$PieceColor(), $.CTC2)) {
       if ($.index(this.BlackAttackBoard, dstPos) === true) {
         $.indexSet(this.WhiteAttackBoard, dstPos, true);
         continue;
@@ -2726,24 +2831,24 @@ $$.PieceValidMoves = {"":
     sqr.get$PlacedPiece().set$ValidMoves(t2);
     $1:{
       t2 = sqr.get$PlacedPiece().get$PieceType().get$value();
-      if ($.eqB($.CTC5.get$value(), t2)) {
-        if ($.eqB(sqr.get$PlacedPiece().get$PieceColor(), $.CTC4)) {
+      if ($.eqB($.CTC3.get$value(), t2)) {
+        if ($.eqB(sqr.get$PlacedPiece().get$PieceColor(), $.CTC2)) {
           this._CheckValidMovesPawn$5($.index(t1.get$WhitePawnMoves(), x).get$Moves(), sqr.get$PlacedPiece(), x, board, $.index(t1.get$WhitePawnTotalMoves(), x));
           break $1;
         }
-        if ($.eqB(sqr.get$PlacedPiece().get$PieceColor(), $.CTC6)) {
+        if ($.eqB(sqr.get$PlacedPiece().get$PieceColor(), $.CTC4)) {
           this._CheckValidMovesPawn$5($.index(t1.get$BlackPawnMoves(), x).get$Moves(), sqr.get$PlacedPiece(), x, board, $.index(t1.get$BlackPawnTotalMoves(), x));
           break $1;
         }
         break $1;
       } else {
-        if ($.eqB($.CTC7.get$value(), t2)) {
+        if ($.eqB($.CTC5.get$value(), t2)) {
           for (var i = 0; $.ltB(i, $.index(t1.get$KnightTotalMoves(), x)); ++i) {
             this._AnalyzeMove$3(board, $.index($.index(t1.get$KnightMoves(), x).get$Moves(), i), sqr.get$PlacedPiece());
           }
           break $1;
         } else {
-          if ($.eqB($.CTC8.get$value(), t2)) {
+          if ($.eqB($.CTC6.get$value(), t2)) {
             for (i = 0; $.ltB(i, $.index(t1.get$BishopTotalMoves1(), x)); ++i) {
               if ($.eqB(this._AnalyzeMove$3(board, $.index($.index(t1.get$BishopMoves1(), x).get$Moves(), i), sqr.get$PlacedPiece()), false)) break;
             }
@@ -2758,7 +2863,7 @@ $$.PieceValidMoves = {"":
             }
             break $1;
           } else {
-            if ($.eqB($.CTC9.get$value(), t2)) {
+            if ($.eqB($.CTC7.get$value(), t2)) {
               for (i = 0; $.ltB(i, $.index(t1.get$RookTotalMoves1(), x)); ++i) {
                 if ($.eqB(this._AnalyzeMove$3(board, $.index($.index(t1.get$RookMoves1(), x).get$Moves(), i), sqr.get$PlacedPiece()), false)) break;
               }
@@ -2773,7 +2878,7 @@ $$.PieceValidMoves = {"":
               }
               break $1;
             } else {
-              if ($.eqB($.CTC10.get$value(), t2)) {
+              if ($.eqB($.CTC8.get$value(), t2)) {
                 for (i = 0; $.ltB(i, $.index(t1.get$QueenTotalMoves1(), x)); ++i) {
                   if ($.eqB(this._AnalyzeMove$3(board, $.index($.index(t1.get$QueenMoves1(), x).get$Moves(), i), sqr.get$PlacedPiece()), false)) break;
                 }
@@ -2800,8 +2905,8 @@ $$.PieceValidMoves = {"":
                 }
                 break $1;
               } else {
-                if ($.eqB($.CTC11.get$value(), t2)) {
-                  if ($.eqB(sqr.get$PlacedPiece().get$PieceColor(), $.CTC4)) this._whiteKingPosition = x;
+                if ($.eqB($.CTC9.get$value(), t2)) {
+                  if ($.eqB(sqr.get$PlacedPiece().get$PieceColor(), $.CTC2)) this._whiteKingPosition = x;
                   else this._blackKingPosition = x;
                   break $1;
                 }
@@ -2812,7 +2917,7 @@ $$.PieceValidMoves = {"":
       }
     }
   }
-  if ($.eqB(board.get$WhoseMove(), $.CTC4)) {
+  if ($.eqB(board.get$WhoseMove(), $.CTC2)) {
     this._GenerateValidMovesKing$3($.index(board.get$Squares(), this._blackKingPosition).get$PlacedPiece(), board, this._blackKingPosition);
     this._GenerateValidMovesKing$3($.index(board.get$Squares(), this._whiteKingPosition).get$PlacedPiece(), board, this._whiteKingPosition);
   } else {
@@ -2833,7 +2938,7 @@ $$.PieceValidMoves = {"":
     if (typeof t3 !== 'number') return this._CheckValidMovesPawn$5$bailout(2, moves, pcMoving, srcPosition, board, count, t3, i, 0);
     if (!($.mod(t3, 8) === t1)) {
       this._AnalyzeMovePawn$3(board, t3, pcMoving);
-      if ($.eqB(pcMoving.get$PieceColor(), $.CTC4)) {
+      if ($.eqB(pcMoving.get$PieceColor(), $.CTC2)) {
         t2 = this.WhiteAttackBoard;
         if (typeof t2 !== 'object' || t2 === null || ((t2.constructor !== Array || !!t2.immutable$list) && !t2.is$JavaScriptIndexingBehavior())) return this._CheckValidMovesPawn$5$bailout(3, moves, pcMoving, srcPosition, board, count, t2, t3, i);
         if (t3 !== (t3 | 0)) throw $.iae(t3);
@@ -2951,7 +3056,7 @@ $$.PieceValidMoves = {"":
                   this._AnalyzeMovePawn$3(board, dstPos, pcMoving);
                 case 3:
                 case 4:
-                  if (state == 3 || (state == 0 && $.eqB(pcMoving.get$PieceColor(), $.CTC4))) {
+                  if (state == 3 || (state == 0 && $.eqB(pcMoving.get$PieceColor(), $.CTC2))) {
                     switch (state) {
                       case 0:
                         var t1 = this.WhiteAttackBoard;
@@ -2985,7 +3090,7 @@ $$.PieceValidMoves = {"":
   }
  },
  _AnalyzeMove$3: function(board, dstPos, pcMoving) {
-  if ($.eqB(pcMoving.get$PieceColor(), $.CTC4)) {
+  if ($.eqB(pcMoving.get$PieceColor(), $.CTC2)) {
     var t1 = this.WhiteAttackBoard;
     if (typeof t1 !== 'object' || t1 === null || ((t1.constructor !== Array || !!t1.immutable$list) && !t1.is$JavaScriptIndexingBehavior())) return this._AnalyzeMove$3$bailout(1, board, dstPos, pcMoving, t1, 0, 0);
     if (dstPos !== (dstPos | 0)) throw $.iae(dstPos);
@@ -3020,8 +3125,8 @@ $$.PieceValidMoves = {"":
     t2 = pcMoving.get$PieceActionValue();
     if (typeof t2 !== 'number') return this._AnalyzeMove$3$bailout(6, board, dstPos, pcMoving, t2, t1, pcAttacked);
     pcAttacked.set$AttackedValue(t1 + t2);
-    if ($.eqB(pcAttacked.get$PieceType(), $.CTC11)) {
-      if ($.eqB(pcAttacked.get$PieceColor(), $.CTC6)) board.set$BlackCheck(true);
+    if ($.eqB(pcAttacked.get$PieceType(), $.CTC9)) {
+      if ($.eqB(pcAttacked.get$PieceColor(), $.CTC4)) board.set$BlackCheck(true);
       else board.set$WhiteCheck(true);
     } else $.add$1(pcMoving.get$ValidMoves(), dstPos);
     return false;
@@ -3089,7 +3194,7 @@ $$.PieceValidMoves = {"":
     case 0:
     case 1:
     case 2:
-      if (state == 1 || (state == 0 && $.eqB(pcMoving.get$PieceColor(), $.CTC4))) {
+      if (state == 1 || (state == 0 && $.eqB(pcMoving.get$PieceColor(), $.CTC2))) {
         switch (state) {
           case 0:
             var t1 = this.WhiteAttackBoard;
@@ -3129,8 +3234,8 @@ $$.PieceValidMoves = {"":
           case 6:
             state = 0;
             pcAttacked.set$AttackedValue($.add(t1, t2));
-            if ($.eqB(pcAttacked.get$PieceType(), $.CTC11)) {
-              if ($.eqB(pcAttacked.get$PieceColor(), $.CTC6)) board.set$BlackCheck(true);
+            if ($.eqB(pcAttacked.get$PieceType(), $.CTC9)) {
+              if ($.eqB(pcAttacked.get$PieceColor(), $.CTC4)) board.set$BlackCheck(true);
               else board.set$WhiteCheck(true);
             } else $.add$1(pcMoving.get$ValidMoves(), dstPos);
             return false;
@@ -3153,7 +3258,7 @@ $$.PieceValidMoves = {"":
     if (!$.eqB(pcMoving.get$PieceColor(), board.get$EnPassantColor())) {
       if ($.eqB(board.get$EnPassantPosition(), dstPos)) {
         $.add$1(pcMoving.get$ValidMoves(), dstPos);
-        if ($.eqB(pcMoving.get$PieceColor(), $.CTC4)) {
+        if ($.eqB(pcMoving.get$PieceColor(), $.CTC2)) {
           t1 = this.WhiteAttackBoard;
           if (typeof t1 !== 'object' || t1 === null || ((t1.constructor !== Array || !!t1.immutable$list) && !t1.is$JavaScriptIndexingBehavior())) return this._AnalyzeMovePawn$3$bailout(2, board, dstPos, pcMoving, t1, 0, 0);
           if (dstPos !== (dstPos | 0)) throw $.iae(dstPos);
@@ -3178,7 +3283,7 @@ $$.PieceValidMoves = {"":
   if (dstPos < 0 || dstPos >= t2) throw $.ioore(dstPos);
   var pcAttacked = t1[dstPos].get$PlacedPiece();
   if (pcAttacked == null) return;
-  if ($.eqB(pcMoving.get$PieceColor(), $.CTC4)) {
+  if ($.eqB(pcMoving.get$PieceColor(), $.CTC2)) {
     t1 = this.WhiteAttackBoard;
     if (typeof t1 !== 'object' || t1 === null || ((t1.constructor !== Array || !!t1.immutable$list) && !t1.is$JavaScriptIndexingBehavior())) return this._AnalyzeMovePawn$3$bailout(5, board, dstPos, pcMoving, t1, pcAttacked, 0);
     t2 = t1.length;
@@ -3197,7 +3302,7 @@ $$.PieceValidMoves = {"":
     t2 = pcMoving.get$PieceActionValue();
     if (typeof t2 !== 'number') return this._AnalyzeMovePawn$3$bailout(9, board, dstPos, pcMoving, pcAttacked, t1, t2);
     pcAttacked.set$AttackedValue(t1 + t2);
-    if ($.eqB(pcAttacked.get$PieceType(), $.CTC11)) board.set$BlackCheck(true);
+    if ($.eqB(pcAttacked.get$PieceType(), $.CTC9)) board.set$BlackCheck(true);
     else $.add$1(pcMoving.get$ValidMoves(), dstPos);
   } else {
     t1 = this.BlackAttackBoard;
@@ -3218,7 +3323,7 @@ $$.PieceValidMoves = {"":
     t2 = pcMoving.get$PieceActionValue();
     if (typeof t2 !== 'number') return this._AnalyzeMovePawn$3$bailout(14, board, dstPos, pcMoving, pcAttacked, t1, t2);
     pcAttacked.set$AttackedValue(t1 + t2);
-    if ($.eqB(pcAttacked.get$PieceType(), $.CTC11)) board.set$WhiteCheck(true);
+    if ($.eqB(pcAttacked.get$PieceType(), $.CTC9)) board.set$WhiteCheck(true);
     else $.add$1(pcMoving.get$ValidMoves(), dstPos);
   }
   return;
@@ -3337,7 +3442,7 @@ $$.PieceValidMoves = {"":
                         $.add$1(pcMoving.get$ValidMoves(), dstPos);
                       case 2:
                       case 3:
-                        if (state == 2 || (state == 0 && $.eqB(pcMoving.get$PieceColor(), $.CTC4))) {
+                        if (state == 2 || (state == 0 && $.eqB(pcMoving.get$PieceColor(), $.CTC2))) {
                           switch (state) {
                             case 0:
                               t1 = this.WhiteAttackBoard;
@@ -3375,7 +3480,7 @@ $$.PieceValidMoves = {"":
     case 12:
     case 13:
     case 14:
-      if (state == 5 || state == 6 || state == 7 || state == 8 || state == 9 || (state == 0 && $.eqB(pcMoving.get$PieceColor(), $.CTC4))) {
+      if (state == 5 || state == 6 || state == 7 || state == 8 || state == 9 || (state == 0 && $.eqB(pcMoving.get$PieceColor(), $.CTC2))) {
         switch (state) {
           case 0:
             t1 = this.WhiteAttackBoard;
@@ -3404,7 +3509,7 @@ $$.PieceValidMoves = {"":
           case 9:
             state = 0;
             pcAttacked.set$AttackedValue($.add(t1, t2));
-            if ($.eqB(pcAttacked.get$PieceType(), $.CTC11)) board.set$BlackCheck(true);
+            if ($.eqB(pcAttacked.get$PieceType(), $.CTC9)) board.set$BlackCheck(true);
             else $.add$1(pcMoving.get$ValidMoves(), dstPos);
         }
       } else {
@@ -3436,7 +3541,7 @@ $$.PieceValidMoves = {"":
           case 14:
             state = 0;
             pcAttacked.set$AttackedValue($.add(t1, t2));
-            if ($.eqB(pcAttacked.get$PieceType(), $.CTC11)) board.set$WhiteCheck(true);
+            if ($.eqB(pcAttacked.get$PieceType(), $.CTC9)) board.set$WhiteCheck(true);
             else $.add$1(pcMoving.get$ValidMoves(), dstPos);
         }
       }
@@ -3445,9 +3550,144 @@ $$.PieceValidMoves = {"":
  }
 };
 
-$$.Board0 = {"":
- ["MoveCount=", "WhoseMove=", "EnPassantPosition?", "EnPassantColor?", "LastMove", "EndGamePhase", "WhiteCastled=", "BlackCastled=", "RepeatedMove", "FiftyMove=", "StaleMate", "WhiteMate", "WhiteCheck=", "BlackMate", "BlackCheck=", "ZobristHash", "Score", "InsufficientMaterial", "Squares?"],
+$$.Board = {"":
+ ["MoveCount=", "WhoseMove=", "EnPassantPosition=", "EnPassantColor=", "LastMove=", "EndGamePhase?", "WhiteCastled=", "BlackCastled=", "RepeatedMove?", "FiftyMove=", "StaleMate=", "WhiteMate?", "WhiteCheck=", "BlackMate?", "BlackCheck=", "ZobristHash?", "Score?", "InsufficientMaterial", "Squares?"],
  super: "Object",
+ SetEnpassantMove$3: function(board, dstPosition, pcColor) {
+  if ($.eqB(board.get$EnPassantPosition(), dstPosition)) {
+    if (!$.eqB(pcColor, board.get$EnPassantColor())) {
+      var pieceLocationOffset = $.eqB(board.get$EnPassantColor(), $.CTC2) ? -8 : 8;
+      var dstPosition0 = $.toInt($.add(dstPosition, pieceLocationOffset));
+      var sqr = $.index(board.get$Squares(), dstPosition0);
+      var t1 = $.PieceTaken$(sqr.get$PlacedPiece().get$PieceColor(), sqr.get$PlacedPiece().get$PieceType(), sqr.get$PlacedPiece().get$Moved(), dstPosition0);
+      board.get$LastMove().set$TakenPiece(t1);
+      $.index(board.get$Squares(), dstPosition0).set$PlacedPiece(null);
+      board.set$FiftyMove(0);
+      return true;
+    }
+  }
+  return false;
+ },
+ RecordEnPassant$5: function(pcColor, pcType, board, srcPosition, dstPosition) {
+  if ($.eqB(pcType, $.CTC3)) {
+    board.set$FiftyMove(0);
+    var difference = $.sub(srcPosition, dstPosition);
+    if ($.eqB(difference, 16) || $.eqB(difference, -16)) {
+      board.set$EnPassantPosition($.toInt($.add(dstPosition, $.div(difference, 2))));
+      board.set$EnPassantColor(pcColor);
+    }
+  }
+ },
+ PromotePawns$4: function(board, piece, dstPosition, promoteToPiece) {
+  if ($.eqB(piece.get$PieceType(), $.CTC3)) {
+    if ($.ltB(dstPosition, 8)) {
+      $.index(board.get$Squares(), dstPosition).get$PlacedPiece().set$PieceType(promoteToPiece);
+      return true;
+    }
+    if ($.gtB(dstPosition, 55)) {
+      $.index(board.get$Squares(), dstPosition).get$PlacedPiece().set$PieceType(promoteToPiece);
+      return true;
+    }
+  }
+  return false;
+ },
+ MovePiece$4: function(board, srcPosition, dstPosition, promoteToPiece) {
+  var piece = $.index(board.get$Squares(), srcPosition).get$PlacedPiece();
+  board.set$LastMove($.MoveContent$());
+  board.set$FiftyMove($.add(board.get$FiftyMove(), 1));
+  $.eqB(piece.get$PieceColor(), $.CTC4) && board.set$MoveCount($.add(board.get$MoveCount(), 1));
+  if ($.gtB(board.get$EnPassantPosition(), 0)) {
+    var t1 = this.SetEnpassantMove$3(board, dstPosition, piece.get$PieceColor());
+    board.get$LastMove().set$EnPassantOccured(t1);
+  }
+  if (board.get$LastMove().get$EnPassantOccured() !== true) {
+    var sqr = $.index(board.get$Squares(), dstPosition);
+    if (!(sqr.get$PlacedPiece() == null)) {
+      t1 = $.PieceTaken$(sqr.get$PlacedPiece().get$PieceColor(), sqr.get$PlacedPiece().get$PieceType(), sqr.get$PlacedPiece().get$Moved(), dstPosition);
+      board.get$LastMove().set$TakenPiece(t1);
+      board.set$FiftyMove(0);
+    } else {
+      t1 = $.PieceTaken$($.CTC2, $.CTC10, false, dstPosition);
+      board.get$LastMove().set$TakenPiece(t1);
+    }
+  }
+  t1 = $.PieceMoving$(piece.get$PieceColor(), piece.get$PieceType(), piece.get$Moved(), srcPosition, dstPosition);
+  board.get$LastMove().set$MovingPiecePrimary(t1);
+  $.index(board.get$Squares(), srcPosition).set$PlacedPiece(null);
+  piece.set$Moved(true);
+  piece.set$Selected(false);
+  $.index(board.get$Squares(), dstPosition).set$PlacedPiece(piece);
+  board.set$EnPassantPosition(0);
+  if ($.eqB(piece.get$PieceType(), $.CTC3)) {
+    board.set$FiftyMove(0);
+    this.RecordEnPassant$5(piece.get$PieceColor(), piece.get$PieceType(), board, srcPosition, dstPosition);
+  }
+  board.set$WhoseMove($.eqB(board.get$WhoseMove(), $.CTC2) ? $.CTC4 : $.CTC2);
+  this.KingCastle$4(board, piece, srcPosition, dstPosition);
+  if (this.PromotePawns$4(board, piece, dstPosition, promoteToPiece) === true) board.get$LastMove().set$PawnPromoted(true);
+  else board.get$LastMove().set$PawnPromoted(false);
+  $.geB(board.get$FiftyMove(), 50) && board.set$StaleMate(true);
+  return board.get$LastMove();
+ },
+ KingCastle$4: function(board, piece, srcPosition, dstPosition) {
+  if (!$.eqB(piece.get$PieceType(), $.CTC9)) return;
+  if ($.eqB(piece.get$PieceColor(), $.CTC2) && $.eqB(srcPosition, 60)) {
+    if ($.eqB(dstPosition, 62)) {
+      if (!($.index(board.get$Squares(), 63).get$PlacedPiece() == null)) {
+        var t1 = $.index(board.get$Squares(), 63).get$PlacedPiece();
+        $.index(board.get$Squares(), 61).set$PlacedPiece(t1);
+        $.index(board.get$Squares(), 63).set$PlacedPiece(null);
+        board.set$WhiteCastled(true);
+        t1 = $.PieceMoving$($.index(board.get$Squares(), 61).get$PlacedPiece().get$PieceColor(), $.index(board.get$Squares(), 61).get$PlacedPiece().get$PieceType(), $.index(board.get$Squares(), 61).get$PlacedPiece().get$Moved(), 63, 61);
+        board.get$LastMove().set$MovingPieceSecondary(t1);
+        $.index(board.get$Squares(), 61).get$PlacedPiece().set$Moved(true);
+        return;
+      }
+    } else {
+      if ($.eqB(dstPosition, 58)) {
+        if (!($.index(board.get$Squares(), 56).get$PlacedPiece() == null)) {
+          t1 = $.index(board.get$Squares(), 56).get$PlacedPiece();
+          $.index(board.get$Squares(), 59).set$PlacedPiece(t1);
+          $.index(board.get$Squares(), 56).set$PlacedPiece(null);
+          board.set$WhiteCastled(true);
+          t1 = $.PieceMoving$($.index(board.get$Squares(), 59).get$PlacedPiece().get$PieceColor(), $.index(board.get$Squares(), 59).get$PlacedPiece().get$PieceType(), $.index(board.get$Squares(), 59).get$PlacedPiece().get$Moved(), 56, 59);
+          board.get$LastMove().set$MovingPieceSecondary(t1);
+          $.index(board.get$Squares(), 59).get$PlacedPiece().set$Moved(true);
+          return;
+        }
+      }
+    }
+  } else {
+    if ($.eqB(piece.get$PieceColor(), $.CTC4) && $.eqB(srcPosition, 4)) {
+      if ($.eqB(dstPosition, 6)) {
+        if (!($.index(board.get$Squares(), 7).get$PlacedPiece() == null)) {
+          t1 = $.index(board.get$Squares(), 7).get$PlacedPiece();
+          $.index(board.get$Squares(), 5).set$PlacedPiece(t1);
+          $.index(board.get$Squares(), 7).set$PlacedPiece(null);
+          board.set$BlackCastled(true);
+          t1 = $.PieceMoving$($.index(board.get$Squares(), 5).get$PlacedPiece().get$PieceColor(), $.index(board.get$Squares(), 5).get$PlacedPiece().get$PieceType(), $.index(board.get$Squares(), 5).get$PlacedPiece().get$Moved(), 7, 5);
+          board.get$LastMove().set$MovingPieceSecondary(t1);
+          $.index(board.get$Squares(), 5).get$PlacedPiece().set$Moved(true);
+          return;
+        }
+      } else {
+        if ($.eqB(dstPosition, 2)) {
+          if (!($.index(board.get$Squares(), 0).get$PlacedPiece() == null)) {
+            t1 = $.index(board.get$Squares(), 0).get$PlacedPiece();
+            $.index(board.get$Squares(), 3).set$PlacedPiece(t1);
+            $.index(board.get$Squares(), 0).set$PlacedPiece(null);
+            board.set$BlackCastled(true);
+            t1 = $.PieceMoving$($.index(board.get$Squares(), 3).get$PlacedPiece().get$PieceColor(), $.index(board.get$Squares(), 3).get$PlacedPiece().get$PieceType(), $.index(board.get$Squares(), 3).get$PlacedPiece().get$Moved(), 0, 3);
+            board.get$LastMove().set$MovingPieceSecondary(t1);
+            $.index(board.get$Squares(), 3).get$PlacedPiece().set$Moved(true);
+            return;
+          }
+        }
+      }
+    }
+  }
+  return;
+ },
  _initBoard$0: function() {
   var t1 = $.ListFactory_List(64);
   $.setRuntimeTypeInfo(t1, ({E: 'Square'}));
@@ -3457,6 +3697,31 @@ $$.Board0 = {"":
   }
   this.LastMove = $.MoveContent$();
  },
+ Board$fromBoard$1: function(board) {
+  var t1 = $.ListFactory_List(64);
+  $.setRuntimeTypeInfo(t1, ({E: 'Square'}));
+  this.Squares = t1;
+  for (var x = 0; x < 64; ++x) {
+    if (!($.index(board.get$Squares(), x).get$PlacedPiece() == null)) $.indexSet(this.Squares, x, $.Square$($.index(board.get$Squares(), x).get$PlacedPiece()));
+  }
+  this.EndGamePhase = board.get$EndGamePhase();
+  this.FiftyMove = board.get$FiftyMove();
+  this.RepeatedMove = board.get$RepeatedMove();
+  this.WhiteCastled = board.get$WhiteCastled();
+  this.BlackCastled = board.get$BlackCastled();
+  this.BlackCheck = board.get$BlackCheck();
+  this.WhiteCheck = board.get$WhiteCheck();
+  this.StaleMate = board.get$StaleMate();
+  this.WhiteMate = board.get$WhiteMate();
+  this.BlackMate = board.get$BlackMate();
+  this.WhoseMove = board.get$WhoseMove();
+  this.EnPassantPosition = board.get$EnPassantPosition();
+  this.EnPassantColor = board.get$EnPassantColor();
+  this.ZobristHash = board.get$ZobristHash();
+  this.Score = board.get$Score();
+  this.LastMove = $.MoveContent$fromMoveContent(board.get$LastMove());
+  this.MoveCount = board.get$MoveCount();
+ },
  Board$fromString$1: function(fen) {
   var t1 = ({});
   this._initBoard$0();
@@ -3465,37 +3730,37 @@ $$.Board0 = {"":
   this.WhiteCastled = true;
   this.BlackCastled = true;
   t1.spacers_3 = 0;
-  this.WhoseMove = $.CTC4;
-  if ($.contains$1(fen, $.CTC13) === true) {
-    this.EnPassantColor = $.CTC4;
+  this.WhoseMove = $.CTC2;
+  if ($.contains$1(fen, $.CTC11) === true) {
+    this.EnPassantColor = $.CTC2;
     this.EnPassantPosition = 40;
   } else {
-    if ($.contains$1(fen, $.CTC14) === true) {
-      this.EnPassantColor = $.CTC4;
+    if ($.contains$1(fen, $.CTC12) === true) {
+      this.EnPassantColor = $.CTC2;
       this.EnPassantPosition = 41;
     } else {
-      if ($.contains$1(fen, $.CTC15) === true) {
-        this.EnPassantColor = $.CTC4;
+      if ($.contains$1(fen, $.CTC13) === true) {
+        this.EnPassantColor = $.CTC2;
         this.EnPassantPosition = 42;
       } else {
-        if ($.contains$1(fen, $.CTC16) === true) {
-          this.EnPassantColor = $.CTC4;
+        if ($.contains$1(fen, $.CTC14) === true) {
+          this.EnPassantColor = $.CTC2;
           this.EnPassantPosition = 43;
         } else {
-          if ($.contains$1(fen, $.CTC17) === true) {
-            this.EnPassantColor = $.CTC4;
+          if ($.contains$1(fen, $.CTC15) === true) {
+            this.EnPassantColor = $.CTC2;
             this.EnPassantPosition = 44;
           } else {
-            if ($.contains$1(fen, $.CTC18) === true) {
-              this.EnPassantColor = $.CTC4;
+            if ($.contains$1(fen, $.CTC16) === true) {
+              this.EnPassantColor = $.CTC2;
               this.EnPassantPosition = 45;
             } else {
-              if ($.contains$1(fen, $.CTC19) === true) {
-                this.EnPassantColor = $.CTC4;
+              if ($.contains$1(fen, $.CTC17) === true) {
+                this.EnPassantColor = $.CTC2;
                 this.EnPassantPosition = 46;
               } else {
-                if ($.contains$1(fen, $.CTC20) === true) {
-                  this.EnPassantColor = $.CTC4;
+                if ($.contains$1(fen, $.CTC18) === true) {
+                  this.EnPassantColor = $.CTC2;
                   this.EnPassantPosition = 47;
                 }
               }
@@ -3505,36 +3770,36 @@ $$.Board0 = {"":
       }
     }
   }
-  if ($.contains$1(fen, $.CTC21) === true) {
-    this.EnPassantColor = $.CTC4;
+  if ($.contains$1(fen, $.CTC19) === true) {
+    this.EnPassantColor = $.CTC2;
     this.EnPassantPosition = 16;
   } else {
-    if ($.contains$1(fen, $.CTC22) === true) {
-      this.EnPassantColor = $.CTC4;
+    if ($.contains$1(fen, $.CTC20) === true) {
+      this.EnPassantColor = $.CTC2;
       this.EnPassantPosition = 17;
     } else {
-      if ($.contains$1(fen, $.CTC23) === true) {
-        this.EnPassantColor = $.CTC4;
+      if ($.contains$1(fen, $.CTC21) === true) {
+        this.EnPassantColor = $.CTC2;
         this.EnPassantPosition = 18;
       } else {
-        if ($.contains$1(fen, $.CTC24) === true) {
-          this.EnPassantColor = $.CTC4;
+        if ($.contains$1(fen, $.CTC22) === true) {
+          this.EnPassantColor = $.CTC2;
           this.EnPassantPosition = 19;
         } else {
-          if ($.contains$1(fen, $.CTC25) === true) {
-            this.EnPassantColor = $.CTC4;
+          if ($.contains$1(fen, $.CTC23) === true) {
+            this.EnPassantColor = $.CTC2;
             this.EnPassantPosition = 20;
           } else {
-            if ($.contains$1(fen, $.CTC26) === true) {
-              this.EnPassantColor = $.CTC4;
+            if ($.contains$1(fen, $.CTC24) === true) {
+              this.EnPassantColor = $.CTC2;
               this.EnPassantPosition = 21;
             } else {
-              if ($.contains$1(fen, $.CTC27) === true) {
-                this.EnPassantColor = $.CTC4;
+              if ($.contains$1(fen, $.CTC25) === true) {
+                this.EnPassantColor = $.CTC2;
                 this.EnPassantPosition = 22;
               } else {
-                if ($.contains$1(fen, $.CTC28) === true) {
-                  this.EnPassantColor = $.CTC4;
+                if ($.contains$1(fen, $.CTC26) === true) {
+                  this.EnPassantColor = $.CTC2;
                   this.EnPassantPosition = 23;
                 }
               }
@@ -3544,7 +3809,7 @@ $$.Board0 = {"":
       }
     }
   }
-  $.forEach($.splitChars(fen), new $.anon0(this, t1));
+  $.forEach($.splitChars(fen), new $.anon(this, t1));
  },
  Board$0: function() {
   this._initBoard$0();
@@ -3554,6 +3819,54 @@ $$.Board0 = {"":
 $$.Engine = {"":
  ["_board", "_moveArrays", "_pieceValidMoves", "_pieceMoves", "HumanPlayer", "PreviousChessBoard", "ChessBoard"],
  super: "Object",
+ MovePiece$4: function(sourceColumn, sourceRow, destinationColumn, destinationRow) {
+  var srcPosition = $.toInt($.add(sourceColumn, $.mul(sourceRow, 8)));
+  var dstPosition = $.toInt($.add(destinationColumn, $.mul(destinationRow, 8)));
+  var piece = $.index(this.ChessBoard.get$Squares(), srcPosition).get$PlacedPiece();
+  this.PreviousChessBoard = $.Board$fromBoard(this.ChessBoard);
+  this._board.MovePiece$4(this.ChessBoard, srcPosition, dstPosition, $.CTC8);
+  this._pieceValidMoves.GenerateValidMoves$1(this.ChessBoard);
+  if ($.eqB(piece.get$PieceColor(), $.CTC2)) {
+    if (this.ChessBoard.get$WhiteCheck() === true) {
+      this.ChessBoard = $.Board$fromBoard(this.PreviousChessBoard);
+      this._pieceValidMoves.GenerateValidMoves$1(this.ChessBoard);
+      return false;
+    }
+  } else {
+    if ($.eqB(piece.get$PieceColor(), $.CTC4)) {
+      if (this.ChessBoard.get$BlackCheck() === true) {
+        this.ChessBoard = $.Board$fromBoard(this.PreviousChessBoard);
+        this._pieceValidMoves.GenerateValidMoves$1(this.ChessBoard);
+        return false;
+      }
+    }
+  }
+  return true;
+ },
+ IsValidMove$4: function(sourceColumn, sourceRow, destinationColumn, destinationRow) {
+  var t1 = this.ChessBoard;
+  if (t1 == null) return false;
+  if (t1.get$Squares() == null) return false;
+  var index = this._GetBoardIndex$2(sourceColumn, sourceRow);
+  if ($.index(this.ChessBoard.get$Squares(), index).get$PlacedPiece() == null) return false;
+  for (t1 = $.iterator($.index(this.ChessBoard.get$Squares(), index).get$PlacedPiece().get$ValidMoves()); t1.hasNext$0() === true; ) {
+    var t2 = t1.next$0();
+    if ($.eqB($.toInt($.mod(t2, 8)), $.toInt(destinationColumn))) {
+      if ($.eqB($.toInt($.div(t2, 8)), $.toInt(destinationRow))) return true;
+    }
+  }
+  if ($.eqB(this._GetBoardIndex$2(destinationColumn, destinationRow), this.ChessBoard.get$EnPassantPosition())) return true;
+  return false;
+ },
+ IsSquareWhoseMove$2: function(col, row) {
+  var t1 = this.ChessBoard;
+  if (t1 == null) return false;
+  if (t1.get$Squares() == null) return false;
+  var index = this._GetBoardIndex$2(col, row);
+  if ($.index(this.ChessBoard.get$Squares(), index).get$PlacedPiece() == null) return false;
+  if ($.eqB(this.GetPieceColorAtIndex$1(index), this.get$WhoseMove()) && !$.eqB(this.GetPieceTypeAtIndex$1(index), $.CTC10)) return true;
+  return false;
+ },
  GetValidMoves$2: function(boardColumn, boardRow) {
   var index = this._GetBoardIndex$2(boardColumn, boardRow);
   if ($.index(this.ChessBoard.get$Squares(), index).get$PlacedPiece() == null) return;
@@ -3576,6 +3889,14 @@ $$.Engine = {"":
   }
   return returnArray;
  },
+ GetPieceTypeAtIndex$1: function(index) {
+  if ($.index(this.ChessBoard.get$Squares(), index).get$PlacedPiece() == null) return $.CTC10;
+  return $.index(this.ChessBoard.get$Squares(), index).get$PlacedPiece().get$PieceType();
+ },
+ GetPieceColorAtIndex$1: function(index) {
+  if ($.index(this.ChessBoard.get$Squares(), index).get$PlacedPiece() == null) return $.CTC2;
+  return $.index(this.ChessBoard.get$Squares(), index).get$PlacedPiece().get$PieceColor();
+ },
  _GetBoardIndex$2: function(BoardColumn, BoardRow) {
   return $.toInt($.add(BoardColumn, $.mul(BoardRow, 8)));
  },
@@ -3583,13 +3904,13 @@ $$.Engine = {"":
   this._pieceValidMoves.GenerateValidMoves$1(this.ChessBoard);
  },
  _InitiateBoard$1: function(fen) {
-  this.HumanPlayer = $.CTC4;
+  this.HumanPlayer = $.CTC2;
   this.ChessBoard = $.Board$fromString(fen);
-  this.ChessBoard.set$WhoseMove($.CTC4);
+  this.ChessBoard.set$WhoseMove($.CTC2);
   this._pieceMoves = $.PieceMoves$();
   this._moveArrays = this._pieceMoves.InitiateChessPieceMotion$0();
   this._pieceValidMoves = $.PieceValidMoves$(this._moveArrays);
-  this._board = $.Board$0();
+  this._board = $.Board$();
   this._GenerateValidMoves$0();
  },
  set$WhoseMove: function(value) {
@@ -3601,56 +3922,6 @@ $$.Engine = {"":
  },
  Engine$0: function() {
   this._InitiateBoard$1('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1');
- }
-};
-
-$$.main_anon = {"":
- ["b_1", "engine_0"],
- super: "Closure",
- $call$1: function(boardsquare) {
-  var moves = this.engine_0.GetValidMoves$2(boardsquare.get$col(), boardsquare.get$row());
-  !(moves == null) && $.forEach(moves, new $.main_anon2(this.b_1));
- }
-};
-
-$$.main_anon2 = {"":
- ["b_2"],
- super: "Closure",
- $call$1: function(sq) {
-  this.b_2.highlight$2($.index(sq, 0), $.index(sq, 1));
- }
-};
-
-$$.main_anon0 = {"":
- ["b_3"],
- super: "Closure",
- $call$1: function(e) {
-  this.b_3.select$2(e.get$offsetX(), e.get$offsetY());
- }
-};
-
-$$.main_anon1 = {"":
- ["b_4"],
- super: "Closure",
- $call$1: function(t) {
-  $.eqB($.get$length(t.get$touches()), 1) && this.b_4.select$2($.index(t.get$touches(), 0).get$clientX(), $.index(t.get$touches(), 0).get$clientY());
- }
-};
-
-$$.main_anim = {"":
- ["components_5"],
- super: "Closure",
- $call$1: function(t) {
-  $.forEach(this.components_5, new $.main_anim_anon());
-  $.window().requestAnimationFrame$1(this);
- }
-};
-
-$$.main_anim_anon = {"":
- [],
- super: "Closure",
- $call$1: function(c) {
-  return c.draw$0();
  }
 };
 
@@ -3690,40 +3961,15 @@ $$.Maps__emitMap_anon = {"":
  }
 };
 
+$$.Game_draw_anon = {"":
+ [],
+ super: "Closure",
+ $call$1: function(p) {
+  return p.draw$0();
+ }
+};
+
 $$.anon = {"":
- ["this_0"],
- super: "Closure",
- $call$1: function(e) {
-  this.this_0.draw$0();
- }
-};
-
-$$.Board_draw_anon = {"":
- ["this_0"],
- super: "Closure",
- $call$2: function(k, v) {
-  return v.draw$1(this.this_0.get$ctx());
- }
-};
-
-$$.DoubleLinkedQueue_length__ = {"":
- ["box_0"],
- super: "Closure",
- $call$1: function(element) {
-  var counter = $.add(this.box_0.counter_1, 1);
-  this.box_0.counter_1 = counter;
- }
-};
-
-$$.LinkedHashMapImplementation_forEach__ = {"":
- ["f_0"],
- super: "Closure",
- $call$1: function(entry) {
-  this.f_0.$call$2(entry.get$key(), entry.get$value());
- }
-};
-
-$$.anon0 = {"":
  ["this_4", "box_0"],
  super: "Closure",
  $call$1: function(c) {
@@ -3761,84 +4007,84 @@ $$.anon0 = {"":
                     this.box_0.index_1 = index;
                   } else {
                     if ($.eqB(c, 'P')) {
-                      var t1 = $.Piece$fromType($.CTC5, $.CTC4);
+                      var t1 = $.Piece$fromType($.CTC3, $.CTC2);
                       $.index(this.this_4.get$Squares(), this.box_0.index_1).set$PlacedPiece(t1);
                       $.index(this.this_4.get$Squares(), this.box_0.index_1).get$PlacedPiece().set$Moved(true);
                       index = $.add(this.box_0.index_1, 1);
                       this.box_0.index_1 = index;
                     } else {
                       if ($.eqB(c, 'N')) {
-                        t1 = $.Piece$fromType($.CTC7, $.CTC4);
+                        t1 = $.Piece$fromType($.CTC5, $.CTC2);
                         $.index(this.this_4.get$Squares(), this.box_0.index_1).set$PlacedPiece(t1);
                         $.index(this.this_4.get$Squares(), this.box_0.index_1).get$PlacedPiece().set$Moved(true);
                         index = $.add(this.box_0.index_1, 1);
                         this.box_0.index_1 = index;
                       } else {
                         if ($.eqB(c, 'B')) {
-                          t1 = $.Piece$fromType($.CTC8, $.CTC4);
+                          t1 = $.Piece$fromType($.CTC6, $.CTC2);
                           $.index(this.this_4.get$Squares(), this.box_0.index_1).set$PlacedPiece(t1);
                           $.index(this.this_4.get$Squares(), this.box_0.index_1).get$PlacedPiece().set$Moved(true);
                           index = $.add(this.box_0.index_1, 1);
                           this.box_0.index_1 = index;
                         } else {
                           if ($.eqB(c, 'R')) {
-                            t1 = $.Piece$fromType($.CTC9, $.CTC4);
+                            t1 = $.Piece$fromType($.CTC7, $.CTC2);
                             $.index(this.this_4.get$Squares(), this.box_0.index_1).set$PlacedPiece(t1);
                             $.index(this.this_4.get$Squares(), this.box_0.index_1).get$PlacedPiece().set$Moved(true);
                             index = $.add(this.box_0.index_1, 1);
                             this.box_0.index_1 = index;
                           } else {
                             if ($.eqB(c, 'Q')) {
-                              t1 = $.Piece$fromType($.CTC10, $.CTC4);
+                              t1 = $.Piece$fromType($.CTC8, $.CTC2);
                               $.index(this.this_4.get$Squares(), this.box_0.index_1).set$PlacedPiece(t1);
                               $.index(this.this_4.get$Squares(), this.box_0.index_1).get$PlacedPiece().set$Moved(true);
                               index = $.add(this.box_0.index_1, 1);
                               this.box_0.index_1 = index;
                             } else {
                               if ($.eqB(c, 'K')) {
-                                t1 = $.Piece$fromType($.CTC11, $.CTC4);
+                                t1 = $.Piece$fromType($.CTC9, $.CTC2);
                                 $.index(this.this_4.get$Squares(), this.box_0.index_1).set$PlacedPiece(t1);
                                 $.index(this.this_4.get$Squares(), this.box_0.index_1).get$PlacedPiece().set$Moved(true);
                                 index = $.add(this.box_0.index_1, 1);
                                 this.box_0.index_1 = index;
                               } else {
                                 if ($.eqB(c, 'p')) {
-                                  t1 = $.Piece$fromType($.CTC5, $.CTC6);
+                                  t1 = $.Piece$fromType($.CTC3, $.CTC4);
                                   $.index(this.this_4.get$Squares(), this.box_0.index_1).set$PlacedPiece(t1);
                                   $.index(this.this_4.get$Squares(), this.box_0.index_1).get$PlacedPiece().set$Moved(true);
                                   index = $.add(this.box_0.index_1, 1);
                                   this.box_0.index_1 = index;
                                 } else {
                                   if ($.eqB(c, 'n')) {
-                                    t1 = $.Piece$fromType($.CTC7, $.CTC6);
+                                    t1 = $.Piece$fromType($.CTC5, $.CTC4);
                                     $.index(this.this_4.get$Squares(), this.box_0.index_1).set$PlacedPiece(t1);
                                     $.index(this.this_4.get$Squares(), this.box_0.index_1).get$PlacedPiece().set$Moved(true);
                                     index = $.add(this.box_0.index_1, 1);
                                     this.box_0.index_1 = index;
                                   } else {
                                     if ($.eqB(c, 'b')) {
-                                      t1 = $.Piece$fromType($.CTC8, $.CTC6);
+                                      t1 = $.Piece$fromType($.CTC6, $.CTC4);
                                       $.index(this.this_4.get$Squares(), this.box_0.index_1).set$PlacedPiece(t1);
                                       $.index(this.this_4.get$Squares(), this.box_0.index_1).get$PlacedPiece().set$Moved(true);
                                       index = $.add(this.box_0.index_1, 1);
                                       this.box_0.index_1 = index;
                                     } else {
                                       if ($.eqB(c, 'r')) {
-                                        t1 = $.Piece$fromType($.CTC9, $.CTC6);
+                                        t1 = $.Piece$fromType($.CTC7, $.CTC4);
                                         $.index(this.this_4.get$Squares(), this.box_0.index_1).set$PlacedPiece(t1);
                                         $.index(this.this_4.get$Squares(), this.box_0.index_1).get$PlacedPiece().set$Moved(true);
                                         index = $.add(this.box_0.index_1, 1);
                                         this.box_0.index_1 = index;
                                       } else {
                                         if ($.eqB(c, 'q')) {
-                                          t1 = $.Piece$fromType($.CTC10, $.CTC6);
+                                          t1 = $.Piece$fromType($.CTC8, $.CTC4);
                                           $.index(this.this_4.get$Squares(), this.box_0.index_1).set$PlacedPiece(t1);
                                           $.index(this.this_4.get$Squares(), this.box_0.index_1).get$PlacedPiece().set$Moved(true);
                                           index = $.add(this.box_0.index_1, 1);
                                           this.box_0.index_1 = index;
                                         } else {
                                           if ($.eqB(c, 'k')) {
-                                            t1 = $.Piece$fromType($.CTC11, $.CTC6);
+                                            t1 = $.Piece$fromType($.CTC9, $.CTC4);
                                             $.index(this.this_4.get$Squares(), this.box_0.index_1).set$PlacedPiece(t1);
                                             $.index(this.this_4.get$Squares(), this.box_0.index_1).get$PlacedPiece().set$Moved(true);
                                             index = $.add(this.box_0.index_1, 1);
@@ -3871,43 +4117,43 @@ $$.anon0 = {"":
       }
     }
   } else {
-    if ($.eqB(c, 'w')) this.this_4.set$WhoseMove($.CTC4);
+    if ($.eqB(c, 'w')) this.this_4.set$WhoseMove($.CTC2);
     else {
-      if ($.eqB(c, 'b')) this.this_4.set$WhoseMove($.CTC6);
+      if ($.eqB(c, 'b')) this.this_4.set$WhoseMove($.CTC4);
       else {
         if ($.eqB(c, 'K')) {
           if (!($.index(this.this_4.get$Squares(), 60).get$PlacedPiece() == null)) {
-            $.eqB($.index(this.this_4.get$Squares(), 60).get$PlacedPiece().get$PieceType(), $.CTC11) && $.index(this.this_4.get$Squares(), 60).get$PlacedPiece().set$Moved(false);
+            $.eqB($.index(this.this_4.get$Squares(), 60).get$PlacedPiece().get$PieceType(), $.CTC9) && $.index(this.this_4.get$Squares(), 60).get$PlacedPiece().set$Moved(false);
           }
           if (!($.index(this.this_4.get$Squares(), 63).get$PlacedPiece() == null)) {
-            $.eqB($.index(this.this_4.get$Squares(), 63).get$PlacedPiece().get$PieceType(), $.CTC9) && $.index(this.this_4.get$Squares(), 63).get$PlacedPiece().set$Moved(false);
+            $.eqB($.index(this.this_4.get$Squares(), 63).get$PlacedPiece().get$PieceType(), $.CTC7) && $.index(this.this_4.get$Squares(), 63).get$PlacedPiece().set$Moved(false);
           }
           this.this_4.set$WhiteCastled(false);
         } else {
           if ($.eqB(c, 'Q')) {
             if (!($.index(this.this_4.get$Squares(), 60).get$PlacedPiece() == null)) {
-              $.eqB($.index(this.this_4.get$Squares(), 60).get$PlacedPiece().get$PieceType(), $.CTC11) && $.index(this.this_4.get$Squares(), 60).get$PlacedPiece().set$Moved(false);
+              $.eqB($.index(this.this_4.get$Squares(), 60).get$PlacedPiece().get$PieceType(), $.CTC9) && $.index(this.this_4.get$Squares(), 60).get$PlacedPiece().set$Moved(false);
             }
             if (!($.index(this.this_4.get$Squares(), 56).get$PlacedPiece() == null)) {
-              $.eqB($.index(this.this_4.get$Squares(), 56).get$PlacedPiece().get$PieceType(), $.CTC9) && $.index(this.this_4.get$Squares(), 56).get$PlacedPiece().set$Moved(false);
+              $.eqB($.index(this.this_4.get$Squares(), 56).get$PlacedPiece().get$PieceType(), $.CTC7) && $.index(this.this_4.get$Squares(), 56).get$PlacedPiece().set$Moved(false);
             }
             this.this_4.set$WhiteCastled(false);
           } else {
             if ($.eqB(c, 'k')) {
               if (!($.index(this.this_4.get$Squares(), 4).get$PlacedPiece() == null)) {
-                $.eqB($.index(this.this_4.get$Squares(), 4).get$PlacedPiece().get$PieceType(), $.CTC11) && $.index(this.this_4.get$Squares(), 4).get$PlacedPiece().set$Moved(false);
+                $.eqB($.index(this.this_4.get$Squares(), 4).get$PlacedPiece().get$PieceType(), $.CTC9) && $.index(this.this_4.get$Squares(), 4).get$PlacedPiece().set$Moved(false);
               }
               if (!($.index(this.this_4.get$Squares(), 7).get$PlacedPiece() == null)) {
-                $.eqB($.index(this.this_4.get$Squares(), 7).get$PlacedPiece().get$PieceType(), $.CTC9) && $.index(this.this_4.get$Squares(), 7).get$PlacedPiece().set$Moved(false);
+                $.eqB($.index(this.this_4.get$Squares(), 7).get$PlacedPiece().get$PieceType(), $.CTC7) && $.index(this.this_4.get$Squares(), 7).get$PlacedPiece().set$Moved(false);
               }
               this.this_4.set$BlackCastled(false);
             } else {
               if ($.eqB(c, 'q')) {
                 if (!($.index(this.this_4.get$Squares(), 4).get$PlacedPiece() == null)) {
-                  $.eqB($.index(this.this_4.get$Squares(), 4).get$PlacedPiece().get$PieceType(), $.CTC11) && $.index(this.this_4.get$Squares(), 4).get$PlacedPiece().set$Moved(false);
+                  $.eqB($.index(this.this_4.get$Squares(), 4).get$PlacedPiece().get$PieceType(), $.CTC9) && $.index(this.this_4.get$Squares(), 4).get$PlacedPiece().set$Moved(false);
                 }
                 if (!($.index(this.this_4.get$Squares(), 0).get$PlacedPiece() == null)) {
-                  $.eqB($.index(this.this_4.get$Squares(), 0).get$PlacedPiece().get$PieceType(), $.CTC9) && $.index(this.this_4.get$Squares(), 0).get$PlacedPiece().set$Moved(false);
+                  $.eqB($.index(this.this_4.get$Squares(), 0).get$PlacedPiece().get$PieceType(), $.CTC7) && $.index(this.this_4.get$Squares(), 0).get$PlacedPiece().set$Moved(false);
                 }
                 this.this_4.set$BlackCastled(false);
               } else {
@@ -4025,14 +4271,100 @@ $$.anon0 = {"":
  }
 };
 
-$$.Board_select_anon = {"":
- ["x_3", "box_0", "y_2"],
+$$.anon0 = {"":
+ ["this_0"],
+ super: "Closure",
+ $call$1: function(e) {
+  this.this_0.get$board().selectSquare$2(e.get$offsetX(), e.get$offsetY());
+ }
+};
+
+$$.anon1 = {"":
+ ["this_0"],
+ super: "Closure",
+ $call$1: function(e) {
+  this.this_0.draw$0();
+ }
+};
+
+$$.DoubleLinkedQueue_length__ = {"":
+ ["box_0"],
+ super: "Closure",
+ $call$1: function(element) {
+  var counter = $.add(this.box_0.counter_1, 1);
+  this.box_0.counter_1 = counter;
+ }
+};
+
+$$.LinkedHashMapImplementation_forEach__ = {"":
+ ["f_0"],
+ super: "Closure",
+ $call$1: function(entry) {
+  this.f_0.$call$2(entry.get$key(), entry.get$value());
+ }
+};
+
+$$.Board_draw_anon = {"":
+ ["this_0"],
  super: "Closure",
  $call$2: function(k, v) {
-  if ($.contains$2(v, this.x_3, this.y_2) === true) {
-    v.set$highlighted(true);
-    this.box_0.boardsquare_1 = v;
+  return v.draw$1(this.this_0.get$ctx());
+ }
+};
+
+$$.Board_selectSquare_anon = {"":
+ ["this_6", "x_5", "y_4"],
+ super: "Closure",
+ $call$2: function(k, v) {
+  if ($.contains$2(v, this.x_5, this.y_4) === true) {
+    $.print('engine.IsSquareWhoseMove(v.col, v.row) = ' + $.S(this.this_6.get$engine().IsSquareWhoseMove$2(v.get$col(), v.get$row())));
+    if (this.this_6.get$engine().IsSquareWhoseMove$2(v.get$col(), v.get$row()) === true) {
+      v.set$highlighted(true);
+      this.this_6.set$selectedSquare(v);
+      $.forEach(this.this_6.get$engine().GetValidMoves$2(v.get$col(), v.get$row()), new $.Board_selectSquare_anon3(this.this_6));
+    }
   } else v.set$highlighted(false);
+ }
+};
+
+$$.Board_selectSquare_anon3 = {"":
+ ["this_7"],
+ super: "Closure",
+ $call$1: function(sq) {
+  this.this_7.highlight$2($.index(sq, 0), $.index(sq, 1));
+ }
+};
+
+$$.Board_selectSquare_anon0 = {"":
+ ["this_10", "x_9", "box_0", "y_8"],
+ super: "Closure",
+ $call$2: function(k, v) {
+  if ($.contains$2(v, this.x_9, this.y_8) === true) {
+    if (this.this_10.get$engine().IsSquareWhoseMove$2(v.get$col(), v.get$row()) === true) {
+      v.set$highlighted(true);
+      this.box_0.tmp_selectedSquare_2 = v;
+      this.box_0.selectedSquareMoves_1 = false;
+    }
+  } else v.set$highlighted(false);
+ }
+};
+
+$$.Board_selectSquare_anon1 = {"":
+ ["x_12", "box_0", "y_11"],
+ super: "Closure",
+ $call$2: function(kk, vv) {
+  if ($.contains$2(vv, this.x_12, this.y_11) === true) this.box_0.dest_square_3 = vv;
+ }
+};
+
+$$.Board_selectSquare_anon2 = {"":
+ ["dest_sq_14", "src_sq_13"],
+ super: "Closure",
+ $call$1: function(p) {
+  if ($.eqB(p.get$sq(), this.src_sq_13)) {
+    $.print('setting p=' + $.S(p) + ' .sq = ' + $.S(this.dest_sq_14));
+    p.set$sq(this.dest_sq_14);
+  }
  }
 };
 
@@ -4134,7 +4466,13 @@ $$.Closure = {"":
 };
 
 Isolate.$defineClass('BoundClosure', 'Closure', ['self', 'target'], {
+$call$1: function(p0) { return this.self[this.target](p0); }
+});
+Isolate.$defineClass('BoundClosure0', 'Closure', ['self', 'target'], {
 $call$0: function() { return this.self[this.target](); }
+});
+Isolate.$defineClass('BoundClosure1', 'Closure', ['self', 'target'], {
+$call$2: function(p0, p1) { return this.self[this.target](p0, p1); }
 });
 $.mul$slow = function(a, b) {
   if ($.checkNumbers(a, b) === true) return a * b;
@@ -4212,6 +4550,14 @@ $.substringUnchecked = function(receiver, startIndex, endIndex) {
   return receiver.substring(startIndex, endIndex);
 };
 
+$.Utils_toSquare = function(_col, _row) {
+  if ($.ltB(_row, 1) || ($.gtB(_row, 8) || ($.ltB(_col, 1) || $.gtB(_col, 8)))) return;
+  if (typeof _col !== 'number') throw $.iae(_col);
+  var t1 = 96 + _col;
+  if (typeof _row !== 'number') throw $.iae(_row);
+  return $.Strings_String$fromCharCodes([t1, 48 + _row]);
+};
+
 $.get$length = function(receiver) {
   if (typeof receiver === 'string' || $.isJsArray(receiver) === true) return receiver.length;
   return receiver.get$length();
@@ -4228,6 +4574,12 @@ $.IllegalJSRegExpException$ = function(_pattern, _errmsg) {
 
 $._IDBOpenDBRequestEventsImpl$ = function(_ptr) {
   return new $._IDBOpenDBRequestEventsImpl(_ptr);
+};
+
+$.Board$fromBoard = function(board) {
+  var t1 = new $.Board(0, null, 0, null, null, false, false, false, 0, 0, false, false, false, false, false, null, 0, false, null);
+  t1.Board$fromBoard$1(board);
+  return t1;
 };
 
 $.typeNameInIE = function(obj) {
@@ -4280,9 +4632,10 @@ $._serializeMessage = function(message) {
   return $._JsCopier$().traverse$1(message);
 };
 
-$.tdiv = function(a, b) {
-  if ($.checkNumbers(a, b) === true) return $.truncate((a) / (b));
-  return a.operator$tdiv$1(b);
+$.PieceMoving$fromPieceMoving = function(pieceMoving) {
+  var t1 = new $.PieceMoving(null, null, null, null, null);
+  t1.PieceMoving$fromPieceMoving$1(pieceMoving);
+  return t1;
 };
 
 $.JSSyntaxRegExp$_globalVersionOf = function(other) {
@@ -4293,6 +4646,26 @@ $.JSSyntaxRegExp$_globalVersionOf = function(other) {
   return t1;
 };
 
+$.tdiv = function(a, b) {
+  if ($.checkNumbers(a, b) === true) return $.truncate((a) / (b));
+  return a.operator$tdiv$1(b);
+};
+
+$.Primitives_printString = function(string) {
+  if (typeof dartPrint == "function") {
+    dartPrint(string);
+    return;
+  }
+  if (typeof console == "object") {
+    console.log(string);
+    return;
+  }
+  if (typeof write == "function") {
+    write(string);
+    write("\n");
+  }
+};
+
 $.typeNameInChrome = function(obj) {
   var name$ = (obj.constructor.name);
   if (name$ === 'Window') return 'DOMWindow';
@@ -4300,9 +4673,15 @@ $.typeNameInChrome = function(obj) {
   return name$;
 };
 
-$.Board$ = function(ctx, height, width) {
-  var t1 = new $.Board('rgb(251, 246, 229)', 'rgb(0, 127, 0)', 'rgba(207, 247, 0, 0.9)', null, null, null, height, width, null, ctx);
-  t1.Board$3(ctx, height, width);
+$.Board$ = function() {
+  var t1 = new $.Board(0, null, 0, null, null, false, false, false, 0, 0, false, false, false, false, false, null, 0, false, null);
+  t1.Board$0();
+  return t1;
+};
+
+$.Board$0 = function(ctx, engine, height, width) {
+  var t1 = new $.Board0('rgb(251, 246, 229)', 'rgb(0, 127, 0)', 'rgba(207, 247, 0, 0.9)', null, null, null, null, height, width, null, null, ctx, engine);
+  t1.Board$4(ctx, engine, height, width);
   return t1;
 };
 
@@ -4319,12 +4698,6 @@ $.shr = function(a, b) {
     return (a >> b) >>> 0;
   }
   return a.operator$shr$1(b);
-};
-
-$.Board$0 = function() {
-  var t1 = new $.Board0(0, null, 0, null, null, false, false, false, 0, 0, false, false, false, false, false, null, 0, false, null);
-  t1.Board$0();
-  return t1;
 };
 
 $.and = function(a, b) {
@@ -4386,6 +4759,10 @@ $.gt = function(a, b) {
   return typeof a === 'number' && typeof b === 'number' ? (a > b) : $.gt$slow(a, b);
 };
 
+$.Strings_String$fromCharCodes = function(charCodes) {
+  return $.StringBase_createFromCharCodes(charCodes);
+};
+
 $.buildDynamicMetadata = function(inputTable) {
   if (typeof inputTable !== 'string' && (typeof inputTable !== 'object' || inputTable === null || (inputTable.constructor !== Array && !inputTable.is$JavaScriptIndexingBehavior()))) return $.buildDynamicMetadata$bailout(1, inputTable, 0, 0, 0, 0, 0, 0);
   var result = [];
@@ -4438,6 +4815,12 @@ $._MessageTraverser_isPrimitive = function(x) {
   return x == null || (typeof x === 'string' || (typeof x === 'number' || typeof x === 'boolean'));
 };
 
+$.DoubleLinkedQueueEntry$ = function(e) {
+  var t1 = new $.DoubleLinkedQueueEntry(null, null, null);
+  t1.DoubleLinkedQueueEntry$1(e);
+  return t1;
+};
+
 $.Collections__emitCollection = function(c, result, visiting) {
   $.add$1(visiting, c);
   var isList = typeof c === 'object' && c !== null && (c.constructor === Array || c.is$List());
@@ -4467,12 +4850,6 @@ $.toStringWrapper = function() {
 
 $._PeerConnection00EventsImpl$ = function(_ptr) {
   return new $._PeerConnection00EventsImpl(_ptr);
-};
-
-$.DoubleLinkedQueueEntry$ = function(e) {
-  var t1 = new $.DoubleLinkedQueueEntry(null, null, null);
-  t1.DoubleLinkedQueueEntry$1(e);
-  return t1;
 };
 
 $._WorkerContextEventsImpl$ = function(_ptr) {
@@ -4523,6 +4900,11 @@ $._SVGElementInstanceEventsImpl$ = function(_ptr) {
   return new $._SVGElementInstanceEventsImpl(_ptr);
 };
 
+$.isEmpty = function(receiver) {
+  if (typeof receiver === 'string' || $.isJsArray(receiver) === true) return receiver.length === 0;
+  return receiver.isEmpty$0();
+};
+
 $.add$1 = function(receiver, value) {
   if ($.isJsArray(receiver) === true) {
     $.checkGrowable(receiver, 'add');
@@ -4552,6 +4934,12 @@ $.stringContainsUnchecked = function(receiver, other, startIndex) {
   return $.iterator($.allMatches(other, $.substring$1(receiver, startIndex))).hasNext$0();
 };
 
+$.Game$ = function(canvas, engine) {
+  var t1 = new $.Game(null, null, canvas, null, null, engine);
+  t1.Game$2(canvas, engine);
+  return t1;
+};
+
 $.ObjectNotClosureException$ = function() {
   return new $.ObjectNotClosureException();
 };
@@ -4561,9 +4949,14 @@ $.window = function() {
 };
 
 $.Piece$fromType = function(chessPiece, chessPieceColor) {
-  var t1 = new $.Piece0(null, null, null, null, 0, 0, null, null, null, null);
+  var t1 = new $.Piece(null, false, null, null, 0, 0, null, null, null, null);
   t1.Piece$fromType$2(chessPiece, chessPieceColor);
   return t1;
+};
+
+$.iterator = function(receiver) {
+  if ($.isJsArray(receiver) === true) return $.ListIterator$(receiver);
+  return receiver.iterator$0();
 };
 
 $.Primitives_objectTypeName = function(object) {
@@ -4575,18 +4968,8 @@ $.Primitives_objectTypeName = function(object) {
   return $.charCodeAt(name$, 0) === 36 ? $.substring$1(name$, 1) : name$;
 };
 
-$.isEmpty = function(receiver) {
-  if (typeof receiver === 'string' || $.isJsArray(receiver) === true) return receiver.length === 0;
-  return receiver.isEmpty$0();
-};
-
 $.regExpAttachGlobalNative = function(regExp) {
   regExp._re = $.regExpMakeNative(regExp, true);
-};
-
-$.iterator = function(receiver) {
-  if ($.isJsArray(receiver) === true) return $.ListIterator$(receiver);
-  return receiver.iterator$0();
 };
 
 $.mod = function(a, b) {
@@ -4708,7 +5091,7 @@ $._DedicatedWorkerContextEventsImpl$ = function(_ptr) {
 
 $.Board$fromString = function(fen) {
   {};
-  var t1 = new $.Board0(0, null, 0, null, null, false, false, false, 0, 0, false, false, false, false, false, null, 0, false, null);
+  var t1 = new $.Board(0, null, 0, null, null, false, false, false, 0, 0, false, false, false, false, false, null, 0, false, null);
   t1.Board$fromString$1(fen);
   return t1;
 };
@@ -4727,12 +5110,6 @@ $.NoMoreElementsException$ = function() {
   return new $.NoMoreElementsException();
 };
 
-$.addLast = function(receiver, value) {
-  if ($.isJsArray(receiver) !== true) return receiver.addLast$1(value);
-  $.checkGrowable(receiver, 'addLast');
-  receiver.push(value);
-};
-
 $._Manager$ = function() {
   var t1 = new $._Manager(null, null, null, null, null, null, null, null, null, 1, 0, 0);
   t1._Manager$0();
@@ -4748,6 +5125,22 @@ $.add$slow = function(a, b) {
   return a.operator$add$1(b);
 };
 
+$.ListFactory_List$from = function(other) {
+  var result = $.ListFactory_List(null);
+  $.setRuntimeTypeInfo(result, ({E: 'E'}));
+  var iterator = $.iterator(other);
+  for (; iterator.hasNext$0() === true; ) {
+    result.push(iterator.next$0());
+  }
+  return result;
+};
+
+$.addLast = function(receiver, value) {
+  if ($.isJsArray(receiver) !== true) return receiver.addLast$1(value);
+  $.checkGrowable(receiver, 'addLast');
+  receiver.push(value);
+};
+
 $.Primitives_newList = function(length$) {
   if (length$ == null) return new Array();
   if (!((typeof length$ === 'number') && (length$ === (length$ | 0))) || length$ < 0) throw $.captureStackTrace($.IllegalArgumentException$(length$));
@@ -4757,51 +5150,8 @@ $.Primitives_newList = function(length$) {
 };
 
 $.main = function() {
-  var canvas = $.query('#board');
-  var ctx = canvas.getContext$1('2d');
-  var engine = $.Engine$();
-  var components = [];
-  var b = $.Board$(ctx, canvas.get$height(), canvas.get$width());
-  b.piecemoves = new $.main_anon(b, engine);
-  b.draw$0();
-  $.add$1(components, b);
-  var t1 = b.ctx;
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White King', $.PieceData_wk, 'e1'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black King', $.PieceData_bk, 'e8'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Queen', $.PieceData_wq, 'd1'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Queen', $.PieceData_bq, 'd8'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Bishop', $.PieceData_wb, 'c1'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Bishop', $.PieceData_wb, 'f1'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Bishop', $.PieceData_bb, 'c8'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Bishop', $.PieceData_bb, 'f8'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Knight', $.PieceData_wn, 'b1'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Knight', $.PieceData_wn, 'g1'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Knight', $.PieceData_bn, 'b8'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Knight', $.PieceData_bn, 'g8'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Rook', $.PieceData_wr, 'a1'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Rook', $.PieceData_wr, 'h1'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Rook', $.PieceData_br, 'a8'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Rook', $.PieceData_br, 'h8'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Pawn', $.PieceData_wp, 'a2'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Pawn', $.PieceData_wp, 'b2'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Pawn', $.PieceData_wp, 'c2'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Pawn', $.PieceData_wp, 'd2'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Pawn', $.PieceData_wp, 'e2'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Pawn', $.PieceData_wp, 'f2'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Pawn', $.PieceData_wp, 'g2'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'White Pawn', $.PieceData_wp, 'h2'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Pawn', $.PieceData_bp, 'a7'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Pawn', $.PieceData_bp, 'b7'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Pawn', $.PieceData_bp, 'c7'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Pawn', $.PieceData_bp, 'd7'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Pawn', $.PieceData_bp, 'e7'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Pawn', $.PieceData_bp, 'f7'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Pawn', $.PieceData_bp, 'g7'));
-  $.add$1(components, $.Piece$(t1, b.ratio, 'Black Pawn', $.PieceData_bp, 'h7'));
-  $.add$1(canvas.get$on().get$mouseDown(), new $.main_anon0(b));
-  $.add$1(canvas.get$on().get$touchStart(), new $.main_anon1(b));
-  var t2 = new $.main_anim(components);
-  $.window().requestAnimationFrame$1(t2);
+  var game = $.Game$($.query('#board'), $.Engine$());
+  $.window().requestAnimationFrame$1(game.get$anim());
 };
 
 $._AbstractWorkerEventsImpl$ = function(_ptr) {
@@ -4834,16 +5184,16 @@ $._MediaElementEventsImpl$ = function(_ptr) {
   return new $._MediaElementEventsImpl(_ptr);
 };
 
+$._IDBTransactionEventsImpl$ = function(_ptr) {
+  return new $._IDBTransactionEventsImpl(_ptr);
+};
+
 $._AllMatchesIterator$ = function(re, _str) {
   return new $._AllMatchesIterator(false, null, _str, $.JSSyntaxRegExp$_globalVersionOf(re));
 };
 
 $._BodyElementEventsImpl$ = function(_ptr) {
   return new $._BodyElementEventsImpl(_ptr);
-};
-
-$._IDBTransactionEventsImpl$ = function(_ptr) {
-  return new $._IDBTransactionEventsImpl(_ptr);
 };
 
 $.iae = function(argument) {
@@ -4901,7 +5251,7 @@ $._AllMatchesIterable$ = function(_re, _str) {
 };
 
 $.Piece$ = function(ctx, ratio, name$, data, sq) {
-  var t1 = new $.Piece(name$, null, data, sq, ctx, ratio, null);
+  var t1 = new $.Piece0(name$, null, data, sq, ctx, ratio, null);
   t1.Piece$5(ctx, ratio, name$, data, sq);
   return t1;
 };
@@ -4925,6 +5275,12 @@ $.endsWith = function(receiver, other) {
   if ($.gtB(otherLength, receiverLength)) return false;
   if (typeof otherLength !== 'number') throw $.iae(otherLength);
   return $.eq(other, $.substring$1(receiver, receiverLength - otherLength));
+};
+
+$.PieceTaken$ = function(pieceColor, pieceType, moved, position) {
+  var t1 = new $.PieceTaken(null, null, null, null);
+  t1.PieceTaken$4(pieceColor, pieceType, moved, position);
+  return t1;
 };
 
 $.ListIterator$ = function(list) {
@@ -5042,6 +5398,12 @@ $.checkNull = function(object) {
   return object;
 };
 
+$.Square$ = function(piece) {
+  var t1 = new $.Square(null);
+  t1.Square$1(piece);
+  return t1;
+};
+
 $.StackTrace$ = function(stack) {
   return new $.StackTrace(stack);
 };
@@ -5069,6 +5431,12 @@ $.DoubleLinkedQueue$ = function() {
 $.MoveContent$ = function() {
   var t1 = new $.MoveContent(null, false, null, null, false);
   t1.MoveContent$0();
+  return t1;
+};
+
+$.Piece$fromPiece = function(piece) {
+  var t1 = new $.Piece(null, false, null, null, 0, 0, null, null, null, null);
+  t1.Piece$fromPiece$1(piece);
   return t1;
 };
 
@@ -5180,6 +5548,12 @@ $._TextTrackEventsImpl$ = function(_ptr) {
   return new $._TextTrackEventsImpl(_ptr);
 };
 
+$.PieceMoving$ = function(pieceColor, pieceType, moved, srcPosition, dstPosition) {
+  var t1 = new $.PieceMoving(null, null, null, null, null);
+  t1.PieceMoving$5(pieceColor, pieceType, moved, srcPosition, dstPosition);
+  return t1;
+};
+
 $.charCodeAt = function(receiver, index) {
   if (typeof receiver === 'string') {
     if (!(typeof index === 'number')) throw $.captureStackTrace($.IllegalArgumentException$(index));
@@ -5192,17 +5566,6 @@ $.charCodeAt = function(receiver, index) {
 
 $._BatteryManagerEventsImpl$ = function(_ptr) {
   return new $._BatteryManagerEventsImpl(_ptr);
-};
-
-$.toString = function(value) {
-  if (typeof value == "object" && value !== null) {
-    if ($.isJsArray(value) === true) return $.Collections_collectionToString(value);
-    return value.toString$0();
-  }
-  if (value === 0 && (1 / value) < 0) return '-0.0';
-  if (value == null) return 'null';
-  if (typeof value == "function") return 'Closure';
-  return String(value);
 };
 
 $._MediaStreamTrackListEventsImpl$ = function(_ptr) {
@@ -5241,6 +5604,17 @@ $.KeyValuePair$ = function(key, value) {
   return new $.KeyValuePair(value, key);
 };
 
+$.toString = function(value) {
+  if (typeof value == "object" && value !== null) {
+    if ($.isJsArray(value) === true) return $.Collections_collectionToString(value);
+    return value.toString$0();
+  }
+  if (value === 0 && (1 / value) < 0) return '-0.0';
+  if (value == null) return 'null';
+  if (typeof value == "function") return 'Closure';
+  return String(value);
+};
+
 $._MediaStreamEventsImpl$ = function(_ptr) {
   return new $._MediaStreamEventsImpl(_ptr);
 };
@@ -5254,16 +5628,8 @@ $.defineProperty = function(obj, property, value) {
       {value: value, enumerable: false, writable: true, configurable: true});
 };
 
-$.dynamicFunction = function(name$) {
-  var f = (Object.prototype[name$]);
-  if (!(f == null) && (!!f.methods)) return f.methods;
-  var methods = ({});
-  var dartMethod = (Object.getPrototypeOf($.CTC31)[name$]);
-  !(dartMethod == null) && (methods['Object'] = dartMethod);
-  var bind = (function() {return $.dynamicBind.$call$4(this, name$, methods, Array.prototype.slice.call(arguments));});
-  bind.methods = methods;
-  $.defineProperty((Object.prototype), name$, bind);
-  return methods;
+$.print = function(obj) {
+  return $.Primitives_printString($.toString(obj));
 };
 
 $.div = function(a, b) {
@@ -5278,21 +5644,41 @@ $.checkString = function(value) {
   return value;
 };
 
+$.dynamicFunction = function(name$) {
+  var f = (Object.prototype[name$]);
+  if (!(f == null) && (!!f.methods)) return f.methods;
+  var methods = ({});
+  var dartMethod = (Object.getPrototypeOf($.CTC31)[name$]);
+  !(dartMethod == null) && (methods['Object'] = dartMethod);
+  var bind = (function() {return $.dynamicBind.$call$4(this, name$, methods, Array.prototype.slice.call(arguments));});
+  bind.methods = methods;
+  $.defineProperty((Object.prototype), name$, bind);
+  return methods;
+};
+
 $._callInIsolate = function(isolate, function$) {
   isolate.eval$1(function$);
   $._globalState().get$topEventLoop().run$0();
+};
+
+$.Primitives_stringFromCharCodes = function(charCodes) {
+  for (var t1 = $.iterator(charCodes); t1.hasNext$0() === true; ) {
+    var t2 = t1.next$0();
+    if (!((typeof t2 === 'number') && (t2 === (t2 | 0)))) throw $.captureStackTrace($.IllegalArgumentException$(t2));
+  }
+  return String.fromCharCode.apply(null, charCodes);
 };
 
 $.Primitives_objectToString = function(object) {
   return 'Instance of \'' + $.S($.Primitives_objectTypeName(object)) + '\'';
 };
 
-$.Arrays_indexOf = function(a, element, startIndex, endIndex) {
-  if (typeof a !== 'string' && (typeof a !== 'object' || a === null || (a.constructor !== Array && !a.is$JavaScriptIndexingBehavior()))) return $.Arrays_indexOf$bailout(1, a, element, startIndex, endIndex);
-  if (typeof endIndex !== 'number') return $.Arrays_indexOf$bailout(1, a, element, startIndex, endIndex);
+$._Lists_indexOf = function(a, element, startIndex, endIndex) {
+  if (typeof a !== 'string' && (typeof a !== 'object' || a === null || (a.constructor !== Array && !a.is$JavaScriptIndexingBehavior()))) return $._Lists_indexOf$bailout(1, a, element, startIndex, endIndex);
+  if (typeof endIndex !== 'number') return $._Lists_indexOf$bailout(1, a, element, startIndex, endIndex);
   if ($.geB(startIndex, a.length)) return -1;
   if ($.ltB(startIndex, 0)) startIndex = 0;
-  if (typeof startIndex !== 'number') return $.Arrays_indexOf$bailout(2, a, element, startIndex, endIndex);
+  if (typeof startIndex !== 'number') return $._Lists_indexOf$bailout(2, a, element, startIndex, endIndex);
   for (var i = startIndex; i < endIndex; ++i) {
     if (i !== (i | 0)) throw $.iae(i);
     var t1 = a.length;
@@ -5315,21 +5701,6 @@ $.set$length = function(receiver, newLength) {
     receiver.length = newLength;
   } else receiver.set$length(newLength);
   return newLength;
-};
-
-$._Lists_indexOf = function(a, element, startIndex, endIndex) {
-  if (typeof a !== 'string' && (typeof a !== 'object' || a === null || (a.constructor !== Array && !a.is$JavaScriptIndexingBehavior()))) return $._Lists_indexOf$bailout(1, a, element, startIndex, endIndex);
-  if (typeof endIndex !== 'number') return $._Lists_indexOf$bailout(1, a, element, startIndex, endIndex);
-  if ($.geB(startIndex, a.length)) return -1;
-  if ($.ltB(startIndex, 0)) startIndex = 0;
-  if (typeof startIndex !== 'number') return $._Lists_indexOf$bailout(2, a, element, startIndex, endIndex);
-  for (var i = startIndex; i < endIndex; ++i) {
-    if (i !== (i | 0)) throw $.iae(i);
-    var t1 = a.length;
-    if (i < 0 || i >= t1) throw $.ioore(i);
-    if ($.eqB(a[i], element)) return i;
-  }
-  return -1;
 };
 
 $.typeNameInFirefox = function(obj) {
@@ -5362,6 +5733,17 @@ $.Collections_forEach = function(iterable, f) {
   }
 };
 
+$.MoveContent$fromMoveContent = function(moveContent) {
+  var t1 = new $.MoveContent(null, false, null, null, false);
+  t1.MoveContent$fromMoveContent$1(moveContent);
+  return t1;
+};
+
+$.forEach = function(receiver, f) {
+  if ($.isJsArray(receiver) !== true) return receiver.forEach$1(f);
+  return $.Collections_forEach(receiver, f);
+};
+
 $.hashCode = function(receiver) {
   if (typeof receiver === 'number') return receiver & 0x1FFFFFFF;
   if (!(typeof receiver === 'string')) return receiver.hashCode$0();
@@ -5377,6 +5759,15 @@ $.hashCode = function(receiver) {
   return 536870911 & hash0 + (16383 & hash0 << 15);
 };
 
+$.removeLast = function(receiver) {
+  if ($.isJsArray(receiver) === true) {
+    $.checkGrowable(receiver, 'removeLast');
+    if ($.get$length(receiver) === 0) throw $.captureStackTrace($.IndexOutOfRangeException$(-1));
+    return receiver.pop();
+  }
+  return receiver.removeLast$0();
+};
+
 $._JsVisitedMap$ = function() {
   return new $._JsVisitedMap(null);
 };
@@ -5390,9 +5781,19 @@ $.makeLiteralMap = function(keyValuePairs) {
   return result;
 };
 
-$.forEach = function(receiver, f) {
-  if ($.isJsArray(receiver) !== true) return receiver.forEach$1(f);
-  return $.Collections_forEach(receiver, f);
+$.Arrays_indexOf = function(a, element, startIndex, endIndex) {
+  if (typeof a !== 'string' && (typeof a !== 'object' || a === null || (a.constructor !== Array && !a.is$JavaScriptIndexingBehavior()))) return $.Arrays_indexOf$bailout(1, a, element, startIndex, endIndex);
+  if (typeof endIndex !== 'number') return $.Arrays_indexOf$bailout(1, a, element, startIndex, endIndex);
+  if ($.geB(startIndex, a.length)) return -1;
+  if ($.ltB(startIndex, 0)) startIndex = 0;
+  if (typeof startIndex !== 'number') return $.Arrays_indexOf$bailout(2, a, element, startIndex, endIndex);
+  for (var i = startIndex; i < endIndex; ++i) {
+    if (i !== (i | 0)) throw $.iae(i);
+    var t1 = a.length;
+    if (i < 0 || i >= t1) throw $.ioore(i);
+    if ($.eqB(a[i], element)) return i;
+  }
+  return -1;
 };
 
 $.startsWith = function(receiver, other) {
@@ -5403,17 +5804,18 @@ $.startsWith = function(receiver, other) {
   return other == receiver.substring(0, length$);
 };
 
-$.toStringForNativeObject = function(obj) {
-  return 'Instance of ' + $.S($.getTypeNameOf(obj));
+$.StringBase_createFromCharCodes = function(charCodes) {
+  $.checkNull(charCodes);
+  if ($.isJsArray(charCodes) !== true) {
+    if (!((typeof charCodes === 'object' && charCodes !== null) && (((charCodes.constructor === Array) || charCodes.is$List())))) throw $.captureStackTrace($.IllegalArgumentException$(charCodes));
+    var charCodes0 = $.ListFactory_List$from(charCodes);
+    charCodes = charCodes0;
+  }
+  return $.Primitives_stringFromCharCodes(charCodes);
 };
 
-$.removeLast = function(receiver) {
-  if ($.isJsArray(receiver) === true) {
-    $.checkGrowable(receiver, 'removeLast');
-    if ($.get$length(receiver) === 0) throw $.captureStackTrace($.IndexOutOfRangeException$(-1));
-    return receiver.pop();
-  }
-  return receiver.removeLast$0();
+$.toStringForNativeObject = function(obj) {
+  return 'Instance of ' + $.S($.getTypeNameOf(obj));
 };
 
 $._Collections_forEach = function(iterable, f) {
@@ -5479,12 +5881,12 @@ $.ListFactory_List = function(length$) {
   return $.Primitives_newList(length$);
 };
 
-$._XMLHttpRequestUploadEventsImpl$ = function(_ptr) {
-  return new $._XMLHttpRequestUploadEventsImpl(_ptr);
-};
-
 $.PieceValidMoves$ = function(_moveArrays) {
   return new $.PieceValidMoves(null, null, null, null, _moveArrays);
+};
+
+$._XMLHttpRequestUploadEventsImpl$ = function(_ptr) {
+  return new $._XMLHttpRequestUploadEventsImpl(_ptr);
 };
 
 $.query = function(selector) {
@@ -5799,38 +6201,38 @@ Isolate.makeConstantList = function(list) {
   return list;
 };
 $.CTC = Isolate.makeConstantList([]);
-$.CTC23 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'c6');
-$.CTC7 = new Isolate.$isolateProperties.ChessPieceType('Knight', 4);
-$.CTC3 = new Isolate.$isolateProperties._DeletedKeySentinel();
-$.CTC24 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'd6');
-$.CTC21 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'a6');
-$.CTC8 = new Isolate.$isolateProperties.ChessPieceType('Bishop', 3);
-$.CTC14 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'b3');
-$.CTC12 = new Isolate.$isolateProperties.ChessPieceType('None', 6);
-$.CTC16 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'd3');
-$.CTC19 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'g3');
+$.CTC21 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'c6');
+$.CTC28 = new Isolate.$isolateProperties.EmptyQueueException();
+$.CTC5 = new Isolate.$isolateProperties.ChessPieceType('Knight', 4);
+$.CTC6 = new Isolate.$isolateProperties.ChessPieceType('Bishop', 3);
+$.CTC19 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'a6');
+$.CTC22 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'd6');
+$.CTC12 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'b3');
 $.CTC30 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'Chrome|DumpRenderTree');
-$.CTC11 = new Isolate.$isolateProperties.ChessPieceType('King', 0);
-$.CTC10 = new Isolate.$isolateProperties.ChessPieceType('Queen', 1);
-$.CTC4 = new Isolate.$isolateProperties.ChessPieceColor('White', 0);
-$.CTC27 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'g6');
-$.CTC25 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'e6');
-$.CTC17 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'e3');
-$.CTC28 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'h6');
-$.CTC29 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
-$.CTC9 = new Isolate.$isolateProperties.ChessPieceType('Rook', 2);
-$.CTC5 = new Isolate.$isolateProperties.ChessPieceType('Pawn', 5);
+$.CTC14 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'd3');
+$.CTC17 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'g3');
+$.CTC2 = new Isolate.$isolateProperties.ChessPieceColor('White', 0);
+$.CTC9 = new Isolate.$isolateProperties.ChessPieceType('King', 0);
+$.CTC10 = new Isolate.$isolateProperties.ChessPieceType('None', 6);
+$.CTC8 = new Isolate.$isolateProperties.ChessPieceType('Queen', 1);
+$.CTC23 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'e6');
+$.CTC25 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'g6');
+$.CTC27 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
+$.CTC15 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'e3');
+$.CTC26 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'h6');
+$.CTC29 = new Isolate.$isolateProperties._DeletedKeySentinel();
+$.CTC3 = new Isolate.$isolateProperties.ChessPieceType('Pawn', 5);
+$.CTC7 = new Isolate.$isolateProperties.ChessPieceType('Rook', 2);
 $.CTC31 = new Isolate.$isolateProperties.Object();
-$.CTC20 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'h3');
-$.CTC26 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'f6');
-$.CTC13 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'a3');
-$.CTC22 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'b6');
-$.CTC15 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'c3');
-$.CTC6 = new Isolate.$isolateProperties.ChessPieceColor('Black', 1);
+$.CTC18 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'h3');
+$.CTC24 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'f6');
+$.CTC11 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'a3');
+$.CTC20 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'b6');
+$.CTC13 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'c3');
 $.CTC0 = new Isolate.$isolateProperties.NullPointerException(Isolate.$isolateProperties.CTC, null);
-$.CTC18 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'f3');
+$.CTC16 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'f3');
 $.CTC1 = new Isolate.$isolateProperties.NoMoreElementsException();
-$.CTC2 = new Isolate.$isolateProperties.EmptyQueueException();
+$.CTC4 = new Isolate.$isolateProperties.ChessPieceColor('Black', 1);
 $.PieceData_wk = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAOOAAADjgBT3J5yAAAAAd0SU1FB9kCGQsCBw4ztPIAAAbOSURBVGje1ZptaFTLGcd/m929mu5qTrKY5krVGGJtNr70mqSLpWm91LeEK7VopAZJ9UuhUG+h1QpFC0WuQgsBW6gUKr1fjLb1DVG4tTagQtFkJZZ2q1VYm0Sziml2c8w5x+xuMv1yzunZzdl136LmD8POmTMzz/xnnnme58wszC4+AoSePppNQWWzTGR3hnzJ4ZiFPpfqE+QGBgCPXq4AHwAJYBoY4h1HzKJOmVJsrqnWG8NsEPlPieq8dbwHHARkG5WS9XfvzaXV/ry+oQ0SQ3rZnDO/z4Exy/OYXjbn8E0galmRMeDLc43ENwDNZo9MAN+eKyQ+AMaz+JBp4CfvOonl+j4QDodDHDp0SPT394t79+6Jo0ePCqfTaZCZ0iOAdxa/Nmb+yJEjIh3Hjh2zrswnb2OAnwO+BmwGAvrM2+HfxkAjkcgMIqOjo6KsrMwg8q8MVnS1bii+A3wdqCh28F7gx3rgl7TR9b/rzm2RpU0EEJWVlSITqqurjfYjlnZfAH4ODGbYVyHg+0B5viS+Bfw3h+DPMKvf1dvJgGhoaMhIxO/3W728Qx/gRI6yIsCHdgN22ZT9CPil1Vk2NTXR1NREfX09AwMD3Lhxg5ERc0IrgU/17w0PgKqqGWdIURQj6wH+DGyyvq+pqWHDhg2sW7eOoaEhQqEQt27dIplMAtQAfwE+Bn6TbSXarTMQCATEzZs3bWf20aNHYs+ePbYz5/F4xPT0tG07r9dr22bHjh3i/v37tm1CoZDYunWrtf6Uvo9s4TFMJyAOHDggcsG5c+eEz+ebMbCenp4ZdXt7e2fUq6qqEqdPn85J1r59+9LVzDb47DIqLVmyRCiKInJFJBIRW7ZsSRlgfX29SCQSKfV2796dUmfz5s1iZGQkZzmqqorVq1db++iwI3LVqHDmzBmRL+LxuGhvb08Z6MmTJ833d+/etTpE0d7eLuLxeN5yrl27ZpVx3o7II0A4nU6haZooBKqqitbWVlPQ4sWLhaqqIplMiubmZrO8tbVVqKpakIxoNGol8k87IhogVq5cKYrB8PBwyoY+fvy4OHHihPns9XrF8PBwUTLq6uqsQag9kbVr14pi0d3dnTLwBQsWmM/d3d1F9x8IBLJFB/QZwoaGhooSlEwmrbNmprq6OpFMJovuu7y83Ojzd3ZfiH8yMpcuXSoqtnE6nXR1dc00i11dOJ3Oovq+fv06mqYZj3+zq7PMiKkaGxvF5ORkUTMXDoeFw+EwV8PhcIhwOFy0WrW0tFhDI18mwr8wBB8+fLhooQ0NDSaRbPFXrjh79qxVVfdnW7lywwy7XC4RDAaLEtzR0WEK7ujoKHqFJUmyml1XtlMUDfgeIJLJJHv37iUejxesz42Njbb5fBGPx9m1axexmHnS+rG+DV6Lk8ZMHjx4sKAZfP78udi4cWNKAHrlypWMwWQ27N+/36pSf8jnNN4L/AOoBbh48SLbt2///7JpGoqioKoqiqKgKAqDg4OEQiEzPXz4kEQiMaPjFStWsG3bNiRJoqKigoULF2b8LS8v5/z58+zcudNo/hL4UtpH2WvxoX7iIVwul5AkSXg8nhRLNNvJ7XanxGfADwu9H+kp9ILG7XazatUqmpubmZycpLe3lydPnhTjQgaAFv1bJG8iW4DPUho4HEiSxKJFi6iurjaT9Xn58uWsWbOGefPmpXQWDocZHBzkxYsXjI6Opvyml6Wp5TTwVeBOwU7a+rF1+/ZtMTU1Jd4E+vr6rCp1vdhD7Cngj+YRSSRCWdmbuRt6+vRpSmRSitP4M0bmwYMHb+wgLU3WX0tBZOAtE4kCd19X35VDnxrwDKjJh4iiKMiyzPj4OIDpHzweT75EQvpmL5qIceeXQuTly5f09/dz584d+vr6ePz4MePj48iyjCzLxjmUbYhvdXrLli0jEAgQCARoaWmhoqIincizUq50j2FBOjs7hd/vt57hliw5HA7h9/tFZ2entfxXpSTySSED83q9YunSpaK2tlZIklQo+Z/mMsBcVeuxXWFtbS1tbW2sX78en89HVVUVlZWVZnK73Sn1hRDIskw0GiUWixGLxYhGowSDQS5cuJDJmERKfUObcpW2adOmkjvHtra29NV4pZ/35uS5czJCwPvAV8wr2rExYrEYr169QtM0EokEbrd7xipkgyzLBINBrl69yqlTp7h8+XJ6aPJ7qx/Lhnz+VFMB/Az4AVku/OfPn4/P58Pn8yFJEmVlZSQSCTRNQ1VVNE0z8xMTE5m6SQC/1eVFZ/Oe8FPg6SyE7s90C/nFfAdV7N+c3tdD62Zglb5qXpuEfiqYnmTd4QX1VHCc/z/twNHwOKYx9wAAAABJRU5ErkJggg==';
 $.PieceData_wr = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAOOAAADjgBT3J5yAAAAAd0SU1FB9kCGQo5AzQu9eQAAANbSURBVGje7Zm7axtZFIc/GSkP5Fe0MFOoGoiE3Kj0gnfBYCWKWJSknF5/gVyYdMa4deFKarbaJsV2YSGEhahRYyZgmMqCDXKRFZFJQJYt4gkyuWnuwDiRrNGMRlZ25wcXoZlz7j3fuY85GkGoH0u/Al1ADGkHwJLD/gnw+Rp7Ie8/cfgkgDfX2HdlHJ6VA3ojghLA79L+ngsIJ8w96fenC/uejGeo5q659wcQdwG8ID9vA7dcJumWtAdYdGEfl/F4UtvOSLVaFaenp1daKpWys/UeeAXUbHtd18XBwcF3Tdd1Z5Zr0u8DIFKp1HdjVKtVp33bF0g2mxWDlMlkhi6Fcrk80KdcLg/1yWQyA32y2awrkLlRNHNzg010XR+8BuJxisXiwHvFYpF4PD5Wf8PG/1ZRr9O1s7NDPp/n/Pz8ynVN00in04NPj1yOw8NDjo+Pr26yhQXW1tZ8Ha9RP85eBk+n00NB/WjkvLXbbVqt1o08xFqtFu1223c/z4AvgFBVVdTrdTFN1et1oaqqvdG/yHg8SwcsQMRiMVGpVKYCUalURCwWsyEsGYdv/QJ8tI/JUqkkLMsKBMCyLFEqlZzH8kc5/khFXMLcB14CKYDV1VU2NzeJRCIT2w9CCPb39zEMw770D/Ab8HbSe+8noO6ylvLb6nK8wHQbeB4wxHNHHeZaXtbGMtAB2NjYYHt723d2dnd3qdVqOKro06k+EBVFYX193TeIoijBPxB/FIUgIUgIEoKEICFICPJfAvFVa3U6HUzT9B1Ep9O5EfjlgMv45WktrZ8DTpSn/sf9PZID/gLuLi4usre3x9LSku/Iu90uW1tbnJ2dAVwAj4HXQWUqB3wCRCKREIZhTPTFg2EYIpFI2MvrEyP+RvCqBzaEoijCNM1A3qKYpikURXHCPJgkxEMbIplMikajEeg7rUajIZLJpBPm4SQg8nLNCk3TRLPZnMoLumazKTRNs2EuZByeN3seeAHcAVhZWUFV1amd8ScnJxwdHdlfLeAp8Pe4/TyyZ2KG2oWMa6wZuQDuRKNR5ufnb7z86PV6XF5e2jNzdxxfAYhCoSBmQYVCwTkz/+Oisd/v0+12bzzIfr/vuUQRM5z8yDhL698ZhRg7rvvAuxk7ft/JuEKFmqa+Ah2gRTqtH9sFAAAAAElFTkSuQmCC';
 $.PieceData_bb = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAOOAAADjgBT3J5yAAAAAd0SU1FB9kCGQsGDP2NqH4AAAQ1SURBVGje3ZrBbxtFFMZ/sWPXVuWAXANOOCDMHigp6QKRIEKCQ4AakBBCVooULoUDJyqEQCAkDnCoBEgof0IEyoHmkIQLBQFai7oJilB7oKUqLiQltVxZuMEO9SZyPRw862xDbO/a3o3Nk568sscz88178703bxack+eA00Ae+BM4CbwJBOgRCQPfAKKOngT6egHI6+aJ+/1+4ff7d4L5oBeAnDImnEgkRLFYFOvr62JiYsIM5GwvAMkaE15aWhKGLCwsmIFc6/SgHgeAXDAe5ufna1+mUilzm196wSLvmPfD6OioGBkZ2blH3uoFIH7g1wasdQHwdbtreYCngX8atFkH7u9mSzwJXG5gCbPeBL4A7u0mAB4ZF8oWQZh1C/gY6N9rEHcB37UAYKd+DxzYKxD32HAlK/o7cNBtEDFgtdnkQqGQUFVVqKoqQqGQFTArwJ1ugdgHnLOyyvF4vBbZ4/G4VcuclmM4Tr8ngMMOLtTjwPtOA4kCx5s1UhQFVVWJxWLbvhiLoaoqiqJYGec4MOCkW71rxT00TRP1RNM0qy72tpMWibtIKE/YaWw3EN1npdH09DSapqEoCpOTkwDMzMyQTqdZWVmxOtYDTq7SdTuxoUXWMvS6k66VctG1Uk66lgY8b7VxPp8nmUzWnm3KD06u0iMdTEma6UNOZ7rXXACRcegYfou87AKQF+xOqtVC2RzwovmL8fFxEokEkUiEcDiM1+vd9Y/lcplsNksmk2F2dpbl5eX/sDdwzC1GiQJ/GSvo8/lEPp8XdiWTyQiv12u2xGqrqUk7pctX5HG1WicNhxkbG2NgYIBAIEAwGCQYDBIIVEu9uq5TKpXQdR1d19nY2GBxcZFcLmd0IYCnnGarerLUwX1xrp2JtHtWjtRqQH4/iqIwNDRENBqlv7+/6R5Jp9NsbW0ZPw1LtyrsxVFXAMLj8TTMeOtJMpkUHo+nLbbqhEVeMh4qlQpTU1PkcjmGh4cZHBykr297+21ublIoFCgWi7XPtbU15ubmqFQqt5Af8JXbFvnRgfhx3m0QYVlkcyIYRtwuymUdAJF1IzXZKYck55c6AKAk+zq0l9XGfcAzwJkWAJwBjrRS/rET2X2AIj+LUgty0CGpCvCsBLK/xTnckGXXr4FLwFWZ/W7KuBKS+rdMYWyt8AnZkegyvQh8ZqUaOSgpUHS5ngVua+Rmp3oAhKFJ6rx88EYPgTD0092A/OzQYJ8Dsw71vWvG/DDVG6RODfKHpFZDXpVs1Kn+bwKP1dsn77XZ+Q1Zj/qoDh37gKPAt1RftmlnrE8axZE+yedHmrBbGbhC9ZbpsnTLZaovApRtUP3dMpo/aNKDNH+D6KIsF+mNAuIdwE9s37heAeaB30y6Kk3rVB53gOr95GFgFBgDHpW/n5dHiEtWOrsd+BJ4jS64cZXyoawR7Of/LP8CuosaQN0AbCQAAAAASUVORK5CYII=';
@@ -6013,10 +6415,6 @@ $.$defineNativeClass('ClientRectList', ["length?"], {
 });
 
 _ConsoleImpl = (typeof console == 'undefined' ? {} : console);
-$.$defineNativeClass('HTMLContentElement', [], {
- select$2: function(arg0, arg1) { return this.select.$call$2(arg0, arg1); }
-});
-
 $.$defineNativeClass('DOMApplicationCache', [], {
  $dom_addEventListener$3: function(type, listener, useCapture) {
   return this.addEventListener(type,$.convertDartClosureToJS(listener, 1),useCapture);
@@ -6134,7 +6532,7 @@ $.$defineNativeClass('DeprecatedPeerConnection', [], {
 
 $.$defineNativeClass('HTMLDocument', [], {
  query$1: function(selectors) {
-  if ($.CTC29.hasMatch$1(selectors) === true) return this.$dom_getElementById$1($.substring$1(selectors, 1));
+  if ($.CTC27.hasMatch$1(selectors) === true) return this.$dom_getElementById$1($.substring$1(selectors, 1));
   return this.$dom_querySelector$1(selectors);
  },
  $dom_querySelector$1: function(selectors) {
@@ -6167,6 +6565,9 @@ $.$defineNativeClass('DocumentFragment', [], {
  query$1: function(selectors) {
   return this.$dom_querySelector$1(selectors);
  }
+});
+
+$.$defineNativeClass('DynamicsCompressorNode', ["ratio?"], {
 });
 
 $.$defineNativeClass('Element', ["id?"], {
@@ -6666,7 +7067,7 @@ $.$defineNativeClass('HTMLMediaElement', ["src!"], {
  load$0: function() {
   return this.load();
  },
- get$load: function() { return new $.BoundClosure(this, 'load$0'); },
+ get$load: function() { return new $.BoundClosure0(this, 'load$0'); },
  get$on: function() {
   return $._MediaElementEventsImpl$(this);
  }
@@ -6755,7 +7156,7 @@ $.$defineNativeClass('MessagePort', [], {
 $.$defineNativeClass('HTMLMeterElement', ["value="], {
 });
 
-$.$defineNativeClass('MouseEvent', ["offsetY?", "offsetX?", "clientY?", "clientX?"], {
+$.$defineNativeClass('MouseEvent', ["offsetY?", "offsetX?"], {
 });
 
 $.$defineNativeClass('NamedNodeMap', ["length?"], {
@@ -7259,12 +7660,6 @@ $.$defineNativeClass('TextTrackList', ["length?"], {
 $.$defineNativeClass('TimeRanges', ["length?"], {
 });
 
-$.$defineNativeClass('Touch', ["clientY?", "clientX?"], {
-});
-
-$.$defineNativeClass('TouchEvent', ["touches?"], {
-});
-
 $.$defineNativeClass('TouchList', ["length?"], {
  removeLast$0: function() {
   throw $.captureStackTrace($.UnsupportedOperationException$('Cannot removeLast on immutable List.'));
@@ -7553,8 +7948,8 @@ $.$defineNativeClass('Worker', [], {
  }
 });
 
-// 193 dynamic classes.
-// 304 classes
+// 191 dynamic classes.
+// 303 classes
 // 27 !leaf
 (function(){
   var v0/*class(_SVGElementImpl)*/ = 'SVGElement|SVGViewElement|SVGVKernElement|SVGUseElement|SVGTitleElement|SVGTextContentElement|SVGTextPositioningElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement|SVGTextPathElement|SVGTextPositioningElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement|SVGTextPathElement|SVGSymbolElement|SVGSwitchElement|SVGStyleElement|SVGStopElement|SVGScriptElement|SVGSVGElement|SVGRectElement|SVGPolylineElement|SVGPolygonElement|SVGPatternElement|SVGPathElement|SVGMissingGlyphElement|SVGMetadataElement|SVGMaskElement|SVGMarkerElement|SVGMPathElement|SVGLineElement|SVGImageElement|SVGHKernElement|SVGGradientElement|SVGRadialGradientElement|SVGLinearGradientElement|SVGRadialGradientElement|SVGLinearGradientElement|SVGGlyphRefElement|SVGGlyphElement|SVGGElement|SVGForeignObjectElement|SVGFontFaceUriElement|SVGFontFaceSrcElement|SVGFontFaceNameElement|SVGFontFaceFormatElement|SVGFontFaceElement|SVGFontElement|SVGFilterElement|SVGFETurbulenceElement|SVGFETileElement|SVGFESpotLightElement|SVGFESpecularLightingElement|SVGFEPointLightElement|SVGFEOffsetElement|SVGFEMorphologyElement|SVGFEMergeNodeElement|SVGFEMergeElement|SVGFEImageElement|SVGFEGaussianBlurElement|SVGFEFloodElement|SVGFEDropShadowElement|SVGFEDistantLightElement|SVGFEDisplacementMapElement|SVGFEDiffuseLightingElement|SVGFEConvolveMatrixElement|SVGFECompositeElement|SVGFEComponentTransferElement|SVGFEColorMatrixElement|SVGFEBlendElement|SVGEllipseElement|SVGDescElement|SVGDefsElement|SVGCursorElement|SVGComponentTransferFunctionElement|SVGFEFuncRElement|SVGFEFuncGElement|SVGFEFuncBElement|SVGFEFuncAElement|SVGFEFuncRElement|SVGFEFuncGElement|SVGFEFuncBElement|SVGFEFuncAElement|SVGClipPathElement|SVGCircleElement|SVGAnimationElement|SVGSetElement|SVGAnimateTransformElement|SVGAnimateMotionElement|SVGAnimateElement|SVGAnimateColorElement|SVGSetElement|SVGAnimateTransformElement|SVGAnimateMotionElement|SVGAnimateElement|SVGAnimateColorElement|SVGAltGlyphItemElement|SVGAltGlyphDefElement|SVGAElement|SVGViewElement|SVGVKernElement|SVGUseElement|SVGTitleElement|SVGTextContentElement|SVGTextPositioningElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement|SVGTextPathElement|SVGTextPositioningElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement|SVGTextPathElement|SVGSymbolElement|SVGSwitchElement|SVGStyleElement|SVGStopElement|SVGScriptElement|SVGSVGElement|SVGRectElement|SVGPolylineElement|SVGPolygonElement|SVGPatternElement|SVGPathElement|SVGMissingGlyphElement|SVGMetadataElement|SVGMaskElement|SVGMarkerElement|SVGMPathElement|SVGLineElement|SVGImageElement|SVGHKernElement|SVGGradientElement|SVGRadialGradientElement|SVGLinearGradientElement|SVGRadialGradientElement|SVGLinearGradientElement|SVGGlyphRefElement|SVGGlyphElement|SVGGElement|SVGForeignObjectElement|SVGFontFaceUriElement|SVGFontFaceSrcElement|SVGFontFaceNameElement|SVGFontFaceFormatElement|SVGFontFaceElement|SVGFontElement|SVGFilterElement|SVGFETurbulenceElement|SVGFETileElement|SVGFESpotLightElement|SVGFESpecularLightingElement|SVGFEPointLightElement|SVGFEOffsetElement|SVGFEMorphologyElement|SVGFEMergeNodeElement|SVGFEMergeElement|SVGFEImageElement|SVGFEGaussianBlurElement|SVGFEFloodElement|SVGFEDropShadowElement|SVGFEDistantLightElement|SVGFEDisplacementMapElement|SVGFEDiffuseLightingElement|SVGFEConvolveMatrixElement|SVGFECompositeElement|SVGFEComponentTransferElement|SVGFEColorMatrixElement|SVGFEBlendElement|SVGEllipseElement|SVGDescElement|SVGDefsElement|SVGCursorElement|SVGComponentTransferFunctionElement|SVGFEFuncRElement|SVGFEFuncGElement|SVGFEFuncBElement|SVGFEFuncAElement|SVGFEFuncRElement|SVGFEFuncGElement|SVGFEFuncBElement|SVGFEFuncAElement|SVGClipPathElement|SVGCircleElement|SVGAnimationElement|SVGSetElement|SVGAnimateTransformElement|SVGAnimateMotionElement|SVGAnimateElement|SVGAnimateColorElement|SVGSetElement|SVGAnimateTransformElement|SVGAnimateMotionElement|SVGAnimateElement|SVGAnimateColorElement|SVGAltGlyphItemElement|SVGAltGlyphDefElement|SVGAElement';
@@ -7570,27 +7965,27 @@ $.$defineNativeClass('Worker', [], {
   var v10/*class(_AbstractWorkerImpl)*/ = 'AbstractWorker|Worker|SharedWorker|Worker|SharedWorker';
   var table = [
     // [dynamic-dispatch-tag, tags of classes implementing dynamic-dispatch-tag]
-    ['AbstractWorker', v10/*class(_AbstractWorkerImpl)*/],
-    ['Uint8Array', 'Uint8Array|Uint8ClampedArray|Uint8ClampedArray'],
-    ['AudioParam', 'AudioParam|AudioGain|AudioGain'],
+    ['EntrySync', 'EntrySync|FileEntrySync|DirectoryEntrySync|FileEntrySync|DirectoryEntrySync'],
     ['WorkerContext', v6/*class(_WorkerContextImpl)*/],
-    ['CSSValueList', 'CSSValueList|WebKitCSSFilterValue|WebKitCSSTransformValue|WebKitCSSFilterValue|WebKitCSSTransformValue'],
-    ['CharacterData', v5/*class(_CharacterDataImpl)*/],
-    ['DOMTokenList', 'DOMTokenList|DOMSettableTokenList|DOMSettableTokenList'],
-    ['HTMLDocument', v4/*class(_DocumentImpl)*/],
-    ['DocumentFragment', v3/*class(_DocumentFragmentImpl)*/],
     ['SVGElement', v0/*class(_SVGElementImpl)*/],
     ['HTMLMediaElement', v1/*class(_MediaElementImpl)*/],
     ['Element', v2/*class(_ElementImpl)*/],
-    ['EntrySync', 'EntrySync|FileEntrySync|DirectoryEntrySync|FileEntrySync|DirectoryEntrySync'],
+    ['DocumentFragment', v3/*class(_DocumentFragmentImpl)*/],
+    ['HTMLDocument', v4/*class(_DocumentImpl)*/],
+    ['CharacterData', v5/*class(_CharacterDataImpl)*/],
     ['Node', v7/*class(_NodeImpl)*/],
     ['MediaStream', v8/*class(_MediaStreamImpl)*/],
     ['IDBRequest', v9/*class(_IDBRequestImpl)*/],
+    ['AbstractWorker', v10/*class(_AbstractWorkerImpl)*/],
     ['EventTarget', [v6/*class(_WorkerContextImpl)*/,v7/*class(_NodeImpl)*/,v8/*class(_MediaStreamImpl)*/,v9/*class(_IDBRequestImpl)*/,v10/*class(_AbstractWorkerImpl)*/,v6/*class(_WorkerContextImpl)*/,v7/*class(_NodeImpl)*/,v8/*class(_MediaStreamImpl)*/,v9/*class(_IDBRequestImpl)*/,v10/*class(_AbstractWorkerImpl)*/,'EventTarget|XMLHttpRequestUpload|XMLHttpRequest|DOMWindow|WebSocket|TextTrackList|TextTrackCue|TextTrack|SpeechRecognition|Performance|PeerConnection00|Notification|MessagePort|MediaStreamTrackList|MediaController|IDBTransaction|IDBDatabase|FileWriter|FileReader|EventSource|DeprecatedPeerConnection|DOMApplicationCache|BatteryManager|AudioContext|XMLHttpRequestUpload|XMLHttpRequest|DOMWindow|WebSocket|TextTrackList|TextTrackCue|TextTrack|SpeechRecognition|Performance|PeerConnection00|Notification|MessagePort|MediaStreamTrackList|MediaController|IDBTransaction|IDBDatabase|FileWriter|FileReader|EventSource|DeprecatedPeerConnection|DOMApplicationCache|BatteryManager|AudioContext'].join('|')],
     ['HTMLCollection', 'HTMLCollection|HTMLOptionsCollection|HTMLOptionsCollection'],
     ['IDBCursor', 'IDBCursor|IDBCursorWithValue|IDBCursorWithValue'],
     ['MouseEvent', 'MouseEvent|WheelEvent|WheelEvent'],
-    ['NodeList', 'NodeList|RadioNodeList|RadioNodeList']];
+    ['Uint8Array', 'Uint8Array|Uint8ClampedArray|Uint8ClampedArray'],
+    ['NodeList', 'NodeList|RadioNodeList|RadioNodeList'],
+    ['AudioParam', 'AudioParam|AudioGain|AudioGain'],
+    ['CSSValueList', 'CSSValueList|WebKitCSSFilterValue|WebKitCSSTransformValue|WebKitCSSFilterValue|WebKitCSSTransformValue'],
+    ['DOMTokenList', 'DOMTokenList|DOMSettableTokenList|DOMSettableTokenList']];
 $.dynamicSetMetadata(table);
 })();
 
