@@ -84,23 +84,4 @@ void main() {
   Game game = new Game(canvas, engine);
   window.requestAnimationFrame(game.anim);
   
-
-//    
-//    print("setting piece selection");
-//    
-//    List<List<int>> moves = engine.GetValidMoves(boardsquare.col, boardsquare.row);
-//    
-//    if (moves != null) {
-//      if (moves.length != 0) {
-//        engine.SetChessPieceSelection(boardsquare.col, boardsquare.row, true);
-//      }
-//      
-//      moves.forEach((sq) {
-//        b.highlight(sq[0], sq[1]);
-//      });
-//    }
-//  };
-//  
-//  
-
 }

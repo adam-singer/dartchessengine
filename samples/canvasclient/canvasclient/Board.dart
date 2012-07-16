@@ -50,6 +50,10 @@ class Board {
           if (engine.IsSquareWhoseMove(v.col, v.row)) {
             v.highlighted = true;
             selectedSquare = v;
+            List<List<int>> moves = engine.GetValidMoves(v.col, v.row);
+            moves.forEach((sq) {
+              highlight(sq[0], sq[1]);
+            });
           }
         } else {
           v.highlighted = false;
@@ -110,6 +114,7 @@ class Board {
                 }
               });
               
+              selectedSquare = null;
             }
           }
         }
