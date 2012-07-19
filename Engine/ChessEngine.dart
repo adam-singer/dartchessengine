@@ -18,3 +18,8 @@
 #source('Board.dart');
 
 #source('Engine.dart');
+
+
+#source('PGN/PGNGame.dart');
+#source('PGN/PGNMove.dart');
+#source('PGN/PGNParser.dart');
