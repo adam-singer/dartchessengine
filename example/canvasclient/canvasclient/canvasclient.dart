@@ -1,6 +1,7 @@
 
 #import('dart:html');
-#import('../../../Engine/ChessEngine.dart', prefix: "ChessEngine");
+//#import('../../../Engine/ChessEngine.dart', prefix: "ChessEngine");
+#import('package:dartchessengine/chess_engine.dart', prefix: "ChessEngine");
 #source("Board.dart");
 #source("BoardSquare.dart");
 #source('Piece.dart');

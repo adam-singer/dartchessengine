@@ -1,5 +1,6 @@
 #import('dart:io');
-#import('../../Engine/ChessEngine.dart');
+//#import('../../Engine/ChessEngine.dart');
+#import('package:dartchessengine/chess_engine.dart');
 
 printBoardCellLocations() {
   StringBuffer sb = new StringBuffer();

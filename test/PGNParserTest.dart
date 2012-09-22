@@ -1,7 +1,8 @@
-#import('../Engine/ChessEngine.dart');
+//#import('../Engine/ChessEngine.dart');
 //#import('/Users/adam/Documents/DartEditor/dart/dart-sdk/lib/unittest/unittest.dart');
-//#import('package:unittest/unittest.dart');
-#import('../packages/unittest/unittest.dart');
+#import('package:unittest/unittest.dart');
+#import('package:dartchessengine/chess_engine.dart');
+//#import('../packages/unittest/unittest.dart');
 
 class PGNParserTest {
   
