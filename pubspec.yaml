@@ -1,4 +1,9 @@
+name: dartchessengine
+description: Chess engine for dart
+version: 0.0.1
 dependencies:
+  unittest:
+      sdk: unittest
   dart-xml:
       git: git://github.com/prujohn/dart-xml.git
   Buckshot:
@@ -7,9 +12,9 @@ dependencies:
       git: git://github.com/bp74/dartflash.git
   mongo-dart:
       git: git://github.com/vadimtsushko/mongo-dart.git
-  json-object:
+  dartwatch-JsonObject:
       git: git://github.com/chrisbu/dartwatch-JsonObject.git
-  unittest:
-      git: git://github.com/financeCoding/unittest.git
   log4dart:
       git: git://github.com/Solvr/log4dart.git
+  rikulo:
+      git: git://github.com/rikulo/rikulo.git
