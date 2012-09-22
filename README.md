@@ -14,7 +14,7 @@ Create a Dart project and add a **pubspec.yaml** file to it
 ```
 dependencies:
   dartchessengine:
-    git: https://github.com/financeCoding/dartchessengine.git
+    git: git://github.com/financeCoding/dartchessengine.git
 ```
 and run **pub install** to install **dartchessengine** (including its dependencies). 
 
